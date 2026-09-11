@@ -1,0 +1,13 @@
+{
+  "source_to_editorial": {
+    "fig1_schematic.png": "Figure_01_schematic.png",
+    "fig2_optimal_rho.png": "Figure_02_optimal_rho.png",
+    "fig3_pipeline_en.png": "Figure_03_pipeline.png",
+    "fig4_sr_curves.png": "Figure_04_sr_curves.png",
+    "fig5_detection_and_roc.png": "Figure_05_detection_and_roc.png",
+    "fig7_evaluation_and_application.png": "Figure_06_evaluation_and_application.png",
+    "fig8_proof_of_concept.png": "Figure_07_proof_of_concept.png",
+    "fig6_a5_simulation.png": "Figure_S1_a5_simulation.png",
+    "supplementary_fig_per_recording.png": "Figure_S2_per_recording.png"
+  }
+}

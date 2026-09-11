@@ -1,0 +1,3509 @@
+{
+  "seed": 42,
+  "keep_fractions": [
+    1.0,
+    0.5,
+    0.25,
+    0.1,
+    0.05,
+    0.02,
+    0.01
+  ],
+  "n_repeats": 3,
+  "note": "Sparsity is varied by thinning the real event stream; the sensor array and the recording interval are unchanged, so the voxel grid of the frame-based methods keeps its size.",
+  "methods": {
+    "edlr": "event-driven",
+    "plr": "frame-based",
+    "bilateral": "frame-based",
+    "bilateral_ed": "event-driven",
+    "ynoise": "event-driven",
+    "temporal": "frame-based",
+    "recursive": "event-driven",
+    "edlr_zk": "event-driven"
+  },
+  "configs": {
+    "edlr": {
+      "interval_quantile": 0.99,
+      "radius": 3,
+      "window_us": 100000.0
+    },
+    "plr": {
+      "n_bins": 200,
+      "quantile": 0.25,
+      "radius": 1,
+      "t_half": 1
+    },
+    "bilateral": {
+      "n_bins": 100,
+      "spatial_radius": 3
+    },
+    "bilateral_ed": {
+      "radius": 3,
+      "window_us": 300000.0
+    },
+    "ynoise": {
+      "dt_us": 300000.0,
+      "radius": 3
+    },
+    "temporal": {
+      "dt_us": 100000.0
+    },
+    "edlr_zk": {
+      "radius": 3,
+      "expected_count": 16.0,
+      "interval_quantile": 0.99
+    }
+  },
+  "scaling": {
+    "edlr": {
+      "family": "event-driven",
+      "cost_exponent_mean": 0.8146530900027292,
+      "cost_exponent_std": 0.05105884979282143,
+      "ns_per_event_dense": 263.94226832962886,
+      "ns_per_event_sparse": 696.0903331976928,
+      "seconds_dense": 0.05278845366592577,
+      "seconds_sparse": 0.0013921806663953855,
+      "peak_bytes_dense": 12855771.0,
+      "peak_bytes_sparse": 1899546.3333333333
+    },
+    "plr": {
+      "family": "frame-based",
+      "cost_exponent_mean": 0.02212390353460209,
+      "cost_exponent_std": 0.005076190863246424,
+      "ns_per_event_dense": 2500.0733699956377,
+      "ns_per_event_sparse": 224382.72983345087,
+      "seconds_dense": 0.5000146739991275,
+      "seconds_sparse": 0.44876545966690173,
+      "peak_bytes_dense": 170201779.33333334,
+      "peak_bytes_sparse": 170200893.0
+    },
+    "bilateral": {
+      "family": "frame-based",
+      "cost_exponent_mean": 0.007876329562238877,
+      "cost_exponent_std": 0.004141775839085281,
+      "ns_per_event_dense": 2306.76498833418,
+      "ns_per_event_sparse": 222477.02166684275,
+      "seconds_dense": 0.461352997666836,
+      "seconds_sparse": 0.44495404333368543,
+      "peak_bytes_dense": 48100135.333333336,
+      "peak_bytes_sparse": 42555913.333333336
+    },
+    "bilateral_ed": {
+      "family": "event-driven",
+      "cost_exponent_mean": 0.9608212931504564,
+      "cost_exponent_std": 0.011454970747231714,
+      "ns_per_event_dense": 290.7631666676025,
+      "ns_per_event_sparse": 340.5960002661838,
+      "seconds_dense": 0.0581526333335205,
+      "seconds_sparse": 0.0006811920005323676,
+      "peak_bytes_dense": 7026701.333333333,
+      "peak_bytes_sparse": 492725.3333333333
+    },
+    "ynoise": {
+      "family": "event-driven",
+      "cost_exponent_mean": 1.0021234272870425,
+      "cost_exponent_std": 0.041918669177271044,
+      "ns_per_event_dense": 81.64846666659287,
+      "ns_per_event_sparse": 77.07216688383294,
+      "seconds_dense": 0.016329693333318573,
+      "seconds_sparse": 0.00015414433376766587,
+      "peak_bytes_dense": 6826325.333333333,
+      "peak_bytes_sparse": 490349.3333333333
+    },
+    "temporal": {
+      "family": "frame-based",
+      "cost_exponent_mean": 0.11658900618657207,
+      "cost_exponent_std": 0.012298176456147674,
+      "ns_per_event_dense": 277.5790899977437,
+      "ns_per_event_sparse": 14905.325833448538,
+      "seconds_dense": 0.055515817999548744,
+      "seconds_sparse": 0.029810651666897076,
+      "peak_bytes_dense": 4002881.3333333335,
+      "peak_bytes_sparse": 780242.0
+    },
+    "recursive": {
+      "family": "event-driven",
+      "cost_exponent_mean": 1.01770545733705,
+      "cost_exponent_std": 0.07104437338570835,
+      "ns_per_event_dense": 40.66153499782862,
+      "ns_per_event_sparse": 38.64749972611511,
+      "seconds_dense": 0.008132306999565722,
+      "seconds_sparse": 7.729499945223021e-05,
+      "peak_bytes_dense": 7304368.0,
+      "peak_bytes_sparse": 968400.0
+    },
+    "edlr_zk": {
+      "family": "event-driven",
+      "cost_exponent_mean": 0.7363139246169791,
+      "cost_exponent_std": 0.05910695423233739,
+      "ns_per_event_dense": 275.7081733337448,
+      "ns_per_event_sparse": 1007.9593330374337,
+      "seconds_dense": 0.05514163466674896,
+      "seconds_sparse": 0.0020159186660748674,
+      "peak_bytes_dense": 14881303.0,
+      "peak_bytes_sparse": 2342017.0
+    }
+  },
+  "measurements": [
+    {
+      "recording_id": "20170214-20-58_22285_SL-16RB",
+      "recording_idx": 0,
+      "shape": [
+        180,
+        240
+      ],
+      "n_pixels": 43200,
+      "duration_s": 13.930139,
+      "keep_fraction": 1.0,
+      "n_events": 200000,
+      "pixel_occupancy": 0.9693981481481482,
+      "events_per_pixel": 4.62962962962963,
+      "method": "edlr",
+      "family": "event-driven",
+      "seconds": 0.05170263799845998,
+      "ns_per_event": 258.5131899922999,
+      "events_per_second": 3868274.574422242,
+      "peak_bytes": 12699409
+    },
+    {
+      "recording_id": "20170214-20-58_22285_SL-16RB",
+      "recording_idx": 0,
+      "shape": [
+        180,
+        240
+      ],
+      "n_pixels": 43200,
+      "duration_s": 13.930139,
+      "keep_fraction": 1.0,
+      "n_events": 200000,
+      "pixel_occupancy": 0.9693981481481482,
+      "events_per_pixel": 4.62962962962963,
+      "method": "plr",
+      "family": "frame-based",
+      "seconds": 0.4087692569992214,
+      "ns_per_event": 2043.846284996107,
+      "events_per_second": 489273.58546531043,
+      "peak_bytes": 138420074
+    },
+    {
+      "recording_id": "20170214-20-58_22285_SL-16RB",
+      "recording_idx": 0,
+      "shape": [
+        180,
+        240
+      ],
+      "n_pixels": 43200,
+      "duration_s": 13.930139,
+      "keep_fraction": 1.0,
+      "n_events": 200000,
+      "pixel_occupancy": 0.9693981481481482,
+      "events_per_pixel": 4.62962962962963,
+      "method": "bilateral",
+      "family": "frame-based",
+      "seconds": 0.3850563579999289,
+      "ns_per_event": 1925.2817899996444,
+      "events_per_second": 519404.48675836937,
+      "peak_bytes": 40164618
+    },
+    {
+      "recording_id": "20170214-20-58_22285_SL-16RB",
+      "recording_idx": 0,
+      "shape": [
+        180,
+        240
+      ],
+      "n_pixels": 43200,
+      "duration_s": 13.930139,
+      "keep_fraction": 1.0,
+      "n_events": 200000,
+      "pixel_occupancy": 0.9693981481481482,
+      "events_per_pixel": 4.62962962962963,
+      "method": "bilateral_ed",
+      "family": "event-driven",
+      "seconds": 0.05805040000086592,
+      "ns_per_event": 290.2520000043296,
+      "events_per_second": 3445282.030735648,
+      "peak_bytes": 6947328
+    },
+    {
+      "recording_id": "20170214-20-58_22285_SL-16RB",
+      "recording_idx": 0,
+      "shape": [
+        180,
+        240
+      ],
+      "n_pixels": 43200,
+      "duration_s": 13.930139,
+      "keep_fraction": 1.0,
+      "n_events": 200000,
+      "pixel_occupancy": 0.9693981481481482,
+      "events_per_pixel": 4.62962962962963,
+      "method": "ynoise",
+      "family": "event-driven",
+      "seconds": 0.01796222899974964,
+      "ns_per_event": 89.8111449987482,
+      "events_per_second": 11134475.571087955,
+      "peak_bytes": 6746952
+    },
+    {
+      "recording_id": "20170214-20-58_22285_SL-16RB",
+      "recording_idx": 0,
+      "shape": [
+        180,
+        240
+      ],
+      "n_pixels": 43200,
+      "duration_s": 13.930139,
+      "keep_fraction": 1.0,
+      "n_events": 200000,
+      "pixel_occupancy": 0.9693981481481482,
+      "events_per_pixel": 4.62962962962963,
+      "method": "temporal",
+      "family": "frame-based",
+      "seconds": 0.05834636300096463,
+      "ns_per_event": 291.73181500482315,
+      "events_per_second": 3427805.774229551,
+      "peak_bytes": 4002944
+    },
+    {
+      "recording_id": "20170214-20-58_22285_SL-16RB",
+      "recording_idx": 0,
+      "shape": [
+        180,
+        240
+      ],
+      "n_pixels": 43200,
+      "duration_s": 13.930139,
+      "keep_fraction": 1.0,
+      "n_events": 200000,
+      "pixel_occupancy": 0.9693981481481482,
+      "events_per_pixel": 4.62962962962963,
+      "method": "recursive",
+      "family": "event-driven",
+      "seconds": 0.008752683001148398,
+      "ns_per_event": 43.76341500574199,
+      "events_per_second": 22850136.349478092,
+      "peak_bytes": 7135664
+    },
+    {
+      "recording_id": "20170214-20-58_22285_SL-16RB",
+      "recording_idx": 0,
+      "shape": [
+        180,
+        240
+      ],
+      "n_pixels": 43200,
+      "duration_s": 13.930139,
+      "keep_fraction": 1.0,
+      "n_events": 200000,
+      "pixel_occupancy": 0.9693981481481482,
+      "events_per_pixel": 4.62962962962963,
+      "method": "edlr_zk",
+      "family": "event-driven",
+      "seconds": 0.05663469099999929,
+      "ns_per_event": 283.17345499999647,
+      "events_per_second": 3531404.4531469676,
+      "peak_bytes": 14643585
+    },
+    {
+      "recording_id": "20170214-20-58_22285_SL-16RB",
+      "recording_idx": 0,
+      "shape": [
+        180,
+        240
+      ],
+      "n_pixels": 43200,
+      "duration_s": 13.930139,
+      "keep_fraction": 0.5,
+      "n_events": 100000,
+      "pixel_occupancy": 0.7375,
+      "events_per_pixel": 2.314814814814815,
+      "method": "edlr",
+      "family": "event-driven",
+      "seconds": 0.024933374999818625,
+      "ns_per_event": 249.33374999818625,
+      "events_per_second": 4010688.484841199,
+      "peak_bytes": 6696121
+    },
+    {
+      "recording_id": "20170214-20-58_22285_SL-16RB",
+      "recording_idx": 0,
+      "shape": [
+        180,
+        240
+      ],
+      "n_pixels": 43200,
+      "duration_s": 13.930139,
+      "keep_fraction": 0.5,
+      "n_events": 100000,
+      "pixel_occupancy": 0.7375,
+      "events_per_pixel": 2.314814814814815,
+      "method": "plr",
+      "family": "frame-based",
+      "seconds": 0.3920453020000423,
+      "ns_per_event": 3920.453020000423,
+      "events_per_second": 255072.56301719238,
+      "peak_bytes": 138417659
+    },
+    {
+      "recording_id": "20170214-20-58_22285_SL-16RB",
+      "recording_idx": 0,
+      "shape": [
+        180,
+        240
+      ],
+      "n_pixels": 43200,
+      "duration_s": 13.930139,
+      "keep_fraction": 0.5,
+      "n_events": 100000,
+      "pixel_occupancy": 0.7375,
+      "events_per_pixel": 2.314814814814815,
+      "method": "bilateral",
+      "family": "frame-based",
+      "seconds": 0.3843732949990226,
+      "ns_per_event": 3843.7329499902266,
+      "events_per_second": 260163.7556538736,
+      "peak_bytes": 37364062
+    },
+    {
+      "recording_id": "20170214-20-58_22285_SL-16RB",
+      "recording_idx": 0,
+      "shape": [
+        180,
+        240
+      ],
+      "n_pixels": 43200,
+      "duration_s": 13.930139,
+      "keep_fraction": 0.5,
+      "n_events": 100000,
+      "pixel_occupancy": 0.7375,
+      "events_per_pixel": 2.314814814814815,
+      "method": "bilateral_ed",
+      "family": "event-driven",
+      "seconds": 0.028967115000341437,
+      "ns_per_event": 289.67115000341437,
+      "events_per_second": 3452190.527044937,
+      "peak_bytes": 3647348
+    },
+    {
+      "recording_id": "20170214-20-58_22285_SL-16RB",
+      "recording_idx": 0,
+      "shape": [
+        180,
+        240
+      ],
+      "n_pixels": 43200,
+      "duration_s": 13.930139,
+      "keep_fraction": 0.5,
+      "n_events": 100000,
+      "pixel_occupancy": 0.7375,
+      "events_per_pixel": 2.314814814814815,
+      "method": "ynoise",
+      "family": "event-driven",
+      "seconds": 0.008080158000666415,
+      "ns_per_event": 80.80158000666415,
+      "events_per_second": 12375995.616886755,
+      "peak_bytes": 3546920
+    },
+    {
+      "recording_id": "20170214-20-58_22285_SL-16RB",
+      "recording_idx": 0,
+      "shape": [
+        180,
+        240
+      ],
+      "n_pixels": 43200,
+      "duration_s": 13.930139,
+      "keep_fraction": 0.5,
+      "n_events": 100000,
+      "pixel_occupancy": 0.7375,
+      "events_per_pixel": 2.314814814814815,
+      "method": "temporal",
+      "family": "frame-based",
+      "seconds": 0.043878323000171804,
+      "ns_per_event": 438.78323000171804,
+      "events_per_second": 2279029.670290919,
+      "peak_bytes": 2004304
+    },
+    {
+      "recording_id": "20170214-20-58_22285_SL-16RB",
+      "recording_idx": 0,
+      "shape": [
+        180,
+        240
+      ],
+      "n_pixels": 43200,
+      "duration_s": 13.930139,
+      "keep_fraction": 0.5,
+      "n_events": 100000,
+      "pixel_occupancy": 0.7375,
+      "events_per_pixel": 2.314814814814815,
+      "method": "recursive",
+      "family": "event-driven",
+      "seconds": 0.004079804000866716,
+      "ns_per_event": 40.79804000866716,
+      "events_per_second": 24510981.404684134,
+      "peak_bytes": 3935760
+    },
+    {
+      "recording_id": "20170214-20-58_22285_SL-16RB",
+      "recording_idx": 0,
+      "shape": [
+        180,
+        240
+      ],
+      "n_pixels": 43200,
+      "duration_s": 13.930139,
+      "keep_fraction": 0.5,
+      "n_events": 100000,
+      "pixel_occupancy": 0.7375,
+      "events_per_pixel": 2.314814814814815,
+      "method": "edlr_zk",
+      "family": "event-driven",
+      "seconds": 0.027878120001332718,
+      "ns_per_event": 278.7812000133272,
+      "events_per_second": 3587042.454628199,
+      "peak_bytes": 7843425
+    },
+    {
+      "recording_id": "20170214-20-58_22285_SL-16RB",
+      "recording_idx": 0,
+      "shape": [
+        180,
+        240
+      ],
+      "n_pixels": 43200,
+      "duration_s": 13.930139,
+      "keep_fraction": 0.25,
+      "n_events": 50000,
+      "pixel_occupancy": 0.5068981481481482,
+      "events_per_pixel": 1.1574074074074074,
+      "method": "edlr",
+      "family": "event-driven",
+      "seconds": 0.012243196000781609,
+      "ns_per_event": 244.86392001563217,
+      "events_per_second": 4083900.9680812093,
+      "peak_bytes": 3696121
+    },
+    {
+      "recording_id": "20170214-20-58_22285_SL-16RB",
+      "recording_idx": 0,
+      "shape": [
+        180,
+        240
+      ],
+      "n_pixels": 43200,
+      "duration_s": 13.930139,
+      "keep_fraction": 0.25,
+      "n_events": 50000,
+      "pixel_occupancy": 0.5068981481481482,
+      "events_per_pixel": 1.1574074074074074,
+      "method": "plr",
+      "family": "frame-based",
+      "seconds": 0.38307157100098266,
+      "ns_per_event": 7661.431420019653,
+      "events_per_second": 130523.91193987022,
+      "peak_bytes": 138417364
+    },
+    {
+      "recording_id": "20170214-20-58_22285_SL-16RB",
+      "recording_idx": 0,
+      "shape": [
+        180,
+        240
+      ],
+      "n_pixels": 43200,
+      "duration_s": 13.930139,
+      "keep_fraction": 0.25,
+      "n_events": 50000,
+      "pixel_occupancy": 0.5068981481481482,
+      "events_per_pixel": 1.1574074074074074,
+      "method": "bilateral",
+      "family": "frame-based",
+      "seconds": 0.37560041600045224,
+      "ns_per_event": 7512.008320009045,
+      "events_per_second": 133120.19334914634,
+      "peak_bytes": 35964062
+    },
+    {
+      "recording_id": "20170214-20-58_22285_SL-16RB",
+      "recording_idx": 0,
+      "shape": [
+        180,
+        240
+      ],
+      "n_pixels": 43200,
+      "duration_s": 13.930139,
+      "keep_fraction": 0.25,
+      "n_events": 50000,
+      "pixel_occupancy": 0.5068981481481482,
+      "events_per_pixel": 1.1574074074074074,
+      "method": "bilateral_ed",
+      "family": "event-driven",
+      "seconds": 0.014470453999820165,
+      "ns_per_event": 289.4090799964033,
+      "events_per_second": 3455316.60586609,
+      "peak_bytes": 1997400
+    },
+    {
+      "recording_id": "20170214-20-58_22285_SL-16RB",
+      "recording_idx": 0,
+      "shape": [
+        180,
+        240
+      ],
+      "n_pixels": 43200,
+      "duration_s": 13.930139,
+      "keep_fraction": 0.25,
+      "n_events": 50000,
+      "pixel_occupancy": 0.5068981481481482,
+      "events_per_pixel": 1.1574074074074074,
+      "method": "ynoise",
+      "family": "event-driven",
+      "seconds": 0.0038309779993142,
+      "ns_per_event": 76.619559986284,
+      "events_per_second": 13051497.557268852,
+      "peak_bytes": 1947337
+    },
+    {
+      "recording_id": "20170214-20-58_22285_SL-16RB",
+      "recording_idx": 0,
+      "shape": [
+        180,
+        240
+      ],
+      "n_pixels": 43200,
+      "duration_s": 13.930139,
+      "keep_fraction": 0.25,
+      "n_events": 50000,
+      "pixel_occupancy": 0.5068981481481482,
+      "events_per_pixel": 1.1574074074074074,
+      "method": "temporal",
+      "family": "frame-based",
+      "seconds": 0.03653344500162348,
+      "ns_per_event": 730.6689000324695,
+      "events_per_second": 1368608.955377137,
+      "peak_bytes": 1302608
+    },
+    {
+      "recording_id": "20170214-20-58_22285_SL-16RB",
+      "recording_idx": 0,
+      "shape": [
+        180,
+        240
+      ],
+      "n_pixels": 43200,
+      "duration_s": 13.930139,
+      "keep_fraction": 0.25,
+      "n_events": 50000,
+      "pixel_occupancy": 0.5068981481481482,
+      "events_per_pixel": 1.1574074074074074,
+      "method": "recursive",
+      "family": "event-driven",
+      "seconds": 0.0017031620009220205,
+      "ns_per_event": 34.06324001844041,
+      "events_per_second": 29357160.371668752,
+      "peak_bytes": 2335760
+    },
+    {
+      "recording_id": "20170214-20-58_22285_SL-16RB",
+      "recording_idx": 0,
+      "shape": [
+        180,
+        240
+      ],
+      "n_pixels": 43200,
+      "duration_s": 13.930139,
+      "keep_fraction": 0.25,
+      "n_events": 50000,
+      "pixel_occupancy": 0.5068981481481482,
+      "events_per_pixel": 1.1574074074074074,
+      "method": "edlr_zk",
+      "family": "event-driven",
+      "seconds": 0.013459632000376587,
+      "ns_per_event": 269.19264000753174,
+      "events_per_second": 3714811.8164449856,
+      "peak_bytes": 4443357
+    },
+    {
+      "recording_id": "20170214-20-58_22285_SL-16RB",
+      "recording_idx": 0,
+      "shape": [
+        180,
+        240
+      ],
+      "n_pixels": 43200,
+      "duration_s": 13.930139,
+      "keep_fraction": 0.1,
+      "n_events": 20000,
+      "pixel_occupancy": 0.2700462962962963,
+      "events_per_pixel": 0.46296296296296297,
+      "method": "edlr",
+      "family": "event-driven",
+      "seconds": 0.004876496999713709,
+      "ns_per_event": 243.82484998568546,
+      "events_per_second": 4101304.68678114,
+      "peak_bytes": 1981571
+    },
+    {
+      "recording_id": "20170214-20-58_22285_SL-16RB",
+      "recording_idx": 0,
+      "shape": [
+        180,
+        240
+      ],
+      "n_pixels": 43200,
+      "duration_s": 13.930139,
+      "keep_fraction": 0.1,
+      "n_events": 20000,
+      "pixel_occupancy": 0.2700462962962963,
+      "events_per_pixel": 0.46296296296296297,
+      "method": "plr",
+      "family": "frame-based",
+      "seconds": 0.36873975600065023,
+      "ns_per_event": 18436.98780003251,
+      "events_per_second": 54238.79490760614,
+      "peak_bytes": 138417266
+    },
+    {
+      "recording_id": "20170214-20-58_22285_SL-16RB",
+      "recording_idx": 0,
+      "shape": [
+        180,
+        240
+      ],
+      "n_pixels": 43200,
+      "duration_s": 13.930139,
+      "keep_fraction": 0.1,
+      "n_events": 20000,
+      "pixel_occupancy": 0.2700462962962963,
+      "events_per_pixel": 0.46296296296296297,
+      "method": "bilateral",
+      "family": "frame-based",
+      "seconds": 0.3657816239992826,
+      "ns_per_event": 18289.08119996413,
+      "events_per_second": 54677.43234700939,
+      "peak_bytes": 35123946
+    },
+    {
+      "recording_id": "20170214-20-58_22285_SL-16RB",
+      "recording_idx": 0,
+      "shape": [
+        180,
+        240
+      ],
+      "n_pixels": 43200,
+      "duration_s": 13.930139,
+      "keep_fraction": 0.1,
+      "n_events": 20000,
+      "pixel_occupancy": 0.2700462962962963,
+      "events_per_pixel": 0.46296296296296297,
+      "method": "bilateral_ed",
+      "family": "event-driven",
+      "seconds": 0.005775994000941864,
+      "ns_per_event": 288.7997000470932,
+      "events_per_second": 3462607.474443134,
+      "peak_bytes": 1007400
+    },
+    {
+      "recording_id": "20170214-20-58_22285_SL-16RB",
+      "recording_idx": 0,
+      "shape": [
+        180,
+        240
+      ],
+      "n_pixels": 43200,
+      "duration_s": 13.930139,
+      "keep_fraction": 0.1,
+      "n_events": 20000,
+      "pixel_occupancy": 0.2700462962962963,
+      "events_per_pixel": 0.46296296296296297,
+      "method": "ynoise",
+      "family": "event-driven",
+      "seconds": 0.0014856640009384137,
+      "ns_per_event": 74.28320004692068,
+      "events_per_second": 13461994.089758573,
+      "peak_bytes": 987024
+    },
+    {
+      "recording_id": "20170214-20-58_22285_SL-16RB",
+      "recording_idx": 0,
+      "shape": [
+        180,
+        240
+      ],
+      "n_pixels": 43200,
+      "duration_s": 13.930139,
+      "keep_fraction": 0.1,
+      "n_events": 20000,
+      "pixel_occupancy": 0.2700462962962963,
+      "events_per_pixel": 0.46296296296296297,
+      "method": "temporal",
+      "family": "frame-based",
+      "seconds": 0.03240476900100475,
+      "ns_per_event": 1620.2384500502376,
+      "events_per_second": 617193.1051068401,
+      "peak_bytes": 936770
+    },
+    {
+      "recording_id": "20170214-20-58_22285_SL-16RB",
+      "recording_idx": 0,
+      "shape": [
+        180,
+        240
+      ],
+      "n_pixels": 43200,
+      "duration_s": 13.930139,
+      "keep_fraction": 0.1,
+      "n_events": 20000,
+      "pixel_occupancy": 0.2700462962962963,
+      "events_per_pixel": 0.46296296296296297,
+      "method": "recursive",
+      "family": "event-driven",
+      "seconds": 0.0005844429997523548,
+      "ns_per_event": 29.22214998761774,
+      "events_per_second": 34220616.90956102,
+      "peak_bytes": 1375760
+    },
+    {
+      "recording_id": "20170214-20-58_22285_SL-16RB",
+      "recording_idx": 0,
+      "shape": [
+        180,
+        240
+      ],
+      "n_pixels": 43200,
+      "duration_s": 13.930139,
+      "keep_fraction": 0.1,
+      "n_events": 20000,
+      "pixel_occupancy": 0.2700462962962963,
+      "events_per_pixel": 0.46296296296296297,
+      "method": "edlr_zk",
+      "family": "event-driven",
+      "seconds": 0.005654095999489073,
+      "ns_per_event": 282.70479997445364,
+      "events_per_second": 3537258.6531617576,
+      "peak_bytes": 2488863
+    },
+    {
+      "recording_id": "20170214-20-58_22285_SL-16RB",
+      "recording_idx": 0,
+      "shape": [
+        180,
+        240
+      ],
+      "n_pixels": 43200,
+      "duration_s": 13.930139,
+      "keep_fraction": 0.05,
+      "n_events": 10000,
+      "pixel_occupancy": 0.1541435185185185,
+      "events_per_pixel": 0.23148148148148148,
+      "method": "edlr",
+      "family": "event-driven",
+      "seconds": 0.00273005900089629,
+      "ns_per_event": 273.005900089629,
+      "events_per_second": 3662924.4996965113,
+      "peak_bytes": 1641873
+    },
+    {
+      "recording_id": "20170214-20-58_22285_SL-16RB",
+      "recording_idx": 0,
+      "shape": [
+        180,
+        240
+      ],
+      "n_pixels": 43200,
+      "duration_s": 13.930139,
+      "keep_fraction": 0.05,
+      "n_events": 10000,
+      "pixel_occupancy": 0.1541435185185185,
+      "events_per_pixel": 0.23148148148148148,
+      "method": "plr",
+      "family": "frame-based",
+      "seconds": 0.36226405600064027,
+      "ns_per_event": 36226.40560006403,
+      "events_per_second": 27604.17390121179,
+      "peak_bytes": 138417404
+    },
+    {
+      "recording_id": "20170214-20-58_22285_SL-16RB",
+      "recording_idx": 0,
+      "shape": [
+        180,
+        240
+      ],
+      "n_pixels": 43200,
+      "duration_s": 13.930139,
+      "keep_fraction": 0.05,
+      "n_events": 10000,
+      "pixel_occupancy": 0.1541435185185185,
+      "events_per_pixel": 0.23148148148148148,
+      "method": "bilateral",
+      "family": "frame-based",
+      "seconds": 0.36684049900031823,
+      "ns_per_event": 36684.04990003182,
+      "events_per_second": 27259.80372192037,
+      "peak_bytes": 34843946
+    },
+    {
+      "recording_id": "20170214-20-58_22285_SL-16RB",
+      "recording_idx": 0,
+      "shape": [
+        180,
+        240
+      ],
+      "n_pixels": 43200,
+      "duration_s": 13.930139,
+      "keep_fraction": 0.05,
+      "n_events": 10000,
+      "pixel_occupancy": 0.1541435185185185,
+      "events_per_pixel": 0.23148148148148148,
+      "method": "bilateral_ed",
+      "family": "event-driven",
+      "seconds": 0.0029912869995314395,
+      "ns_per_event": 299.12869995314395,
+      "events_per_second": 3343042.6440413166,
+      "peak_bytes": 677400
+    },
+    {
+      "recording_id": "20170214-20-58_22285_SL-16RB",
+      "recording_idx": 0,
+      "shape": [
+        180,
+        240
+      ],
+      "n_pixels": 43200,
+      "duration_s": 13.930139,
+      "keep_fraction": 0.05,
+      "n_events": 10000,
+      "pixel_occupancy": 0.1541435185185185,
+      "events_per_pixel": 0.23148148148148148,
+      "method": "ynoise",
+      "family": "event-driven",
+      "seconds": 0.0007719839995843358,
+      "ns_per_event": 77.19839995843358,
+      "events_per_second": 12953636.351769418,
+      "peak_bytes": 667024
+    },
+    {
+      "recording_id": "20170214-20-58_22285_SL-16RB",
+      "recording_idx": 0,
+      "shape": [
+        180,
+        240
+      ],
+      "n_pixels": 43200,
+      "duration_s": 13.930139,
+      "keep_fraction": 0.05,
+      "n_events": 10000,
+      "pixel_occupancy": 0.1541435185185185,
+      "events_per_pixel": 0.23148148148148148,
+      "method": "temporal",
+      "family": "frame-based",
+      "seconds": 0.031144614998993347,
+      "ns_per_event": 3114.4614998993347,
+      "events_per_second": 321082.793937996,
+      "peak_bytes": 815666
+    },
+    {
+      "recording_id": "20170214-20-58_22285_SL-16RB",
+      "recording_idx": 0,
+      "shape": [
+        180,
+        240
+      ],
+      "n_pixels": 43200,
+      "duration_s": 13.930139,
+      "keep_fraction": 0.05,
+      "n_events": 10000,
+      "pixel_occupancy": 0.1541435185185185,
+      "events_per_pixel": 0.23148148148148148,
+      "method": "recursive",
+      "family": "event-driven",
+      "seconds": 0.00028995000138820615,
+      "ns_per_event": 28.995000138820615,
+      "events_per_second": 34488704.7840061,
+      "peak_bytes": 1055760
+    },
+    {
+      "recording_id": "20170214-20-58_22285_SL-16RB",
+      "recording_idx": 0,
+      "shape": [
+        180,
+        240
+      ],
+      "n_pixels": 43200,
+      "duration_s": 13.930139,
+      "keep_fraction": 0.05,
+      "n_events": 10000,
+      "pixel_occupancy": 0.1541435185185185,
+      "events_per_pixel": 0.23148148148148148,
+      "method": "edlr_zk",
+      "family": "event-driven",
+      "seconds": 0.003437246999965282,
+      "ns_per_event": 343.7246999965282,
+      "events_per_second": 2909305.033970793,
+      "peak_bytes": 2069009
+    },
+    {
+      "recording_id": "20170214-20-58_22285_SL-16RB",
+      "recording_idx": 0,
+      "shape": [
+        180,
+        240
+      ],
+      "n_pixels": 43200,
+      "duration_s": 13.930139,
+      "keep_fraction": 0.02,
+      "n_events": 4000,
+      "pixel_occupancy": 0.06898148148148148,
+      "events_per_pixel": 0.09259259259259259,
+      "method": "edlr",
+      "family": "event-driven",
+      "seconds": 0.0015862909986026352,
+      "ns_per_event": 396.5727496506588,
+      "events_per_second": 2521605.432750739,
+      "peak_bytes": 1593939
+    },
+    {
+      "recording_id": "20170214-20-58_22285_SL-16RB",
+      "recording_idx": 0,
+      "shape": [
+        180,
+        240
+      ],
+      "n_pixels": 43200,
+      "duration_s": 13.930139,
+      "keep_fraction": 0.02,
+      "n_events": 4000,
+      "pixel_occupancy": 0.06898148148148148,
+      "events_per_pixel": 0.09259259259259259,
+      "method": "plr",
+      "family": "frame-based",
+      "seconds": 0.3695422380005766,
+      "ns_per_event": 92385.55950014415,
+      "events_per_second": 10824.202455562761,
+      "peak_bytes": 138417208
+    },
+    {
+      "recording_id": "20170214-20-58_22285_SL-16RB",
+      "recording_idx": 0,
+      "shape": [
+        180,
+        240
+      ],
+      "n_pixels": 43200,
+      "duration_s": 13.930139,
+      "keep_fraction": 0.02,
+      "n_events": 4000,
+      "pixel_occupancy": 0.06898148148148148,
+      "events_per_pixel": 0.09259259259259259,
+      "method": "bilateral",
+      "family": "frame-based",
+      "seconds": 0.3748644810002588,
+      "ns_per_event": 93716.1202500647,
+      "events_per_second": 10670.522822879126,
+      "peak_bytes": 34676004
+    },
+    {
+      "recording_id": "20170214-20-58_22285_SL-16RB",
+      "recording_idx": 0,
+      "shape": [
+        180,
+        240
+      ],
+      "n_pixels": 43200,
+      "duration_s": 13.930139,
+      "keep_fraction": 0.02,
+      "n_events": 4000,
+      "pixel_occupancy": 0.06898148148148148,
+      "events_per_pixel": 0.09259259259259259,
+      "method": "bilateral_ed",
+      "family": "event-driven",
+      "seconds": 0.0012569399987114593,
+      "ns_per_event": 314.23499967786483,
+      "events_per_second": 3182331.697694849,
+      "peak_bytes": 479400
+    },
+    {
+      "recording_id": "20170214-20-58_22285_SL-16RB",
+      "recording_idx": 0,
+      "shape": [
+        180,
+        240
+      ],
+      "n_pixels": 43200,
+      "duration_s": 13.930139,
+      "keep_fraction": 0.02,
+      "n_events": 4000,
+      "pixel_occupancy": 0.06898148148148148,
+      "events_per_pixel": 0.09259259259259259,
+      "method": "ynoise",
+      "family": "event-driven",
+      "seconds": 0.00033624500065343454,
+      "ns_per_event": 84.06125016335864,
+      "events_per_second": 11896087.65104815,
+      "peak_bytes": 475024
+    },
+    {
+      "recording_id": "20170214-20-58_22285_SL-16RB",
+      "recording_idx": 0,
+      "shape": [
+        180,
+        240
+      ],
+      "n_pixels": 43200,
+      "duration_s": 13.930139,
+      "keep_fraction": 0.02,
+      "n_events": 4000,
+      "pixel_occupancy": 0.06898148148148148,
+      "events_per_pixel": 0.09259259259259259,
+      "method": "temporal",
+      "family": "frame-based",
+      "seconds": 0.030782883000938455,
+      "ns_per_event": 7695.720750234613,
+      "events_per_second": 129942.34490245943,
+      "peak_bytes": 742932
+    },
+    {
+      "recording_id": "20170214-20-58_22285_SL-16RB",
+      "recording_idx": 0,
+      "shape": [
+        180,
+        240
+      ],
+      "n_pixels": 43200,
+      "duration_s": 13.930139,
+      "keep_fraction": 0.02,
+      "n_events": 4000,
+      "pixel_occupancy": 0.06898148148148148,
+      "events_per_pixel": 0.09259259259259259,
+      "method": "recursive",
+      "family": "event-driven",
+      "seconds": 0.00012495199916884303,
+      "ns_per_event": 31.237999792210758,
+      "events_per_second": 32012292.933344327,
+      "peak_bytes": 863760
+    },
+    {
+      "recording_id": "20170214-20-58_22285_SL-16RB",
+      "recording_idx": 0,
+      "shape": [
+        180,
+        240
+      ],
+      "n_pixels": 43200,
+      "duration_s": 13.930139,
+      "keep_fraction": 0.02,
+      "n_events": 4000,
+      "pixel_occupancy": 0.06898148148148148,
+      "events_per_pixel": 0.09259259259259259,
+      "method": "edlr_zk",
+      "family": "event-driven",
+      "seconds": 0.0021900970004935516,
+      "ns_per_event": 547.5242501233879,
+      "events_per_second": 1826403.1223724682,
+      "peak_bytes": 1972891
+    },
+    {
+      "recording_id": "20170214-20-58_22285_SL-16RB",
+      "recording_idx": 0,
+      "shape": [
+        180,
+        240
+      ],
+      "n_pixels": 43200,
+      "duration_s": 13.930139,
+      "keep_fraction": 0.01,
+      "n_events": 2000,
+      "pixel_occupancy": 0.036689814814814814,
+      "events_per_pixel": 0.046296296296296294,
+      "method": "edlr",
+      "family": "event-driven",
+      "seconds": 0.0012047099990013521,
+      "ns_per_event": 602.3549995006761,
+      "events_per_second": 1660150.577033399,
+      "peak_bytes": 1577773
+    },
+    {
+      "recording_id": "20170214-20-58_22285_SL-16RB",
+      "recording_idx": 0,
+      "shape": [
+        180,
+        240
+      ],
+      "n_pixels": 43200,
+      "duration_s": 13.930139,
+      "keep_fraction": 0.01,
+      "n_events": 2000,
+      "pixel_occupancy": 0.036689814814814814,
+      "events_per_pixel": 0.046296296296296294,
+      "method": "plr",
+      "family": "frame-based",
+      "seconds": 0.3552177910005412,
+      "ns_per_event": 177608.8955002706,
+      "events_per_second": 5630.348621803554,
+      "peak_bytes": 138417312
+    },
+    {
+      "recording_id": "20170214-20-58_22285_SL-16RB",
+      "recording_idx": 0,
+      "shape": [
+        180,
+        240
+      ],
+      "n_pixels": 43200,
+      "duration_s": 13.930139,
+      "keep_fraction": 0.01,
+      "n_events": 2000,
+      "pixel_occupancy": 0.036689814814814814,
+      "events_per_pixel": 0.046296296296296294,
+      "method": "bilateral",
+      "family": "frame-based",
+      "seconds": 0.35976541500167514,
+      "ns_per_event": 179882.70750083757,
+      "events_per_second": 5559.178054929732,
+      "peak_bytes": 34619952
+    },
+    {
+      "recording_id": "20170214-20-58_22285_SL-16RB",
+      "recording_idx": 0,
+      "shape": [
+        180,
+        240
+      ],
+      "n_pixels": 43200,
+      "duration_s": 13.930139,
+      "keep_fraction": 0.01,
+      "n_events": 2000,
+      "pixel_occupancy": 0.036689814814814814,
+      "events_per_pixel": 0.046296296296296294,
+      "method": "bilateral_ed",
+      "family": "event-driven",
+      "seconds": 0.0007177040006354218,
+      "ns_per_event": 358.8520003177109,
+      "events_per_second": 2786664.1376239965,
+      "peak_bytes": 413400
+    },
+    {
+      "recording_id": "20170214-20-58_22285_SL-16RB",
+      "recording_idx": 0,
+      "shape": [
+        180,
+        240
+      ],
+      "n_pixels": 43200,
+      "duration_s": 13.930139,
+      "keep_fraction": 0.01,
+      "n_events": 2000,
+      "pixel_occupancy": 0.036689814814814814,
+      "events_per_pixel": 0.046296296296296294,
+      "method": "ynoise",
+      "family": "event-driven",
+      "seconds": 0.00016955499995674472,
+      "ns_per_event": 84.77749997837236,
+      "events_per_second": 11795582.55734258,
+      "peak_bytes": 411024
+    },
+    {
+      "recording_id": "20170214-20-58_22285_SL-16RB",
+      "recording_idx": 0,
+      "shape": [
+        180,
+        240
+      ],
+      "n_pixels": 43200,
+      "duration_s": 13.930139,
+      "keep_fraction": 0.01,
+      "n_events": 2000,
+      "pixel_occupancy": 0.036689814814814814,
+      "events_per_pixel": 0.046296296296296294,
+      "method": "temporal",
+      "family": "frame-based",
+      "seconds": 0.03073181400031899,
+      "ns_per_event": 15365.907000159497,
+      "events_per_second": 65079.139161106476,
+      "peak_bytes": 718624
+    },
+    {
+      "recording_id": "20170214-20-58_22285_SL-16RB",
+      "recording_idx": 0,
+      "shape": [
+        180,
+        240
+      ],
+      "n_pixels": 43200,
+      "duration_s": 13.930139,
+      "keep_fraction": 0.01,
+      "n_events": 2000,
+      "pixel_occupancy": 0.036689814814814814,
+      "events_per_pixel": 0.046296296296296294,
+      "method": "recursive",
+      "family": "event-driven",
+      "seconds": 7.554799958597869e-05,
+      "ns_per_event": 37.77399979298934,
+      "events_per_second": 26473235.703929737,
+      "peak_bytes": 799760
+    },
+    {
+      "recording_id": "20170214-20-58_22285_SL-16RB",
+      "recording_idx": 0,
+      "shape": [
+        180,
+        240
+      ],
+      "n_pixels": 43200,
+      "duration_s": 13.930139,
+      "keep_fraction": 0.01,
+      "n_events": 2000,
+      "pixel_occupancy": 0.036689814814814814,
+      "events_per_pixel": 0.046296296296296294,
+      "method": "edlr_zk",
+      "family": "event-driven",
+      "seconds": 0.0017475639997428516,
+      "ns_per_event": 873.7819998714258,
+      "events_per_second": 1144450.2177283885,
+      "peak_bytes": 1940886
+    },
+    {
+      "recording_id": "20170214-21-15_SL8RB_21938",
+      "recording_idx": 1,
+      "shape": [
+        180,
+        240
+      ],
+      "n_pixels": 43200,
+      "duration_s": 16.827803,
+      "keep_fraction": 1.0,
+      "n_events": 200000,
+      "pixel_occupancy": 0.9856944444444444,
+      "events_per_pixel": 4.62962962962963,
+      "method": "edlr",
+      "family": "event-driven",
+      "seconds": 0.05711504099963349,
+      "ns_per_event": 285.57520499816746,
+      "events_per_second": 3501704.5685265884,
+      "peak_bytes": 12695955
+    },
+    {
+      "recording_id": "20170214-21-15_SL8RB_21938",
+      "recording_idx": 1,
+      "shape": [
+        180,
+        240
+      ],
+      "n_pixels": 43200,
+      "duration_s": 16.827803,
+      "keep_fraction": 1.0,
+      "n_events": 200000,
+      "pixel_occupancy": 0.9856944444444444,
+      "events_per_pixel": 4.62962962962963,
+      "method": "plr",
+      "family": "frame-based",
+      "seconds": 0.4041648209986306,
+      "ns_per_event": 2020.8241049931528,
+      "events_per_second": 494847.62059654284,
+      "peak_bytes": 138417098
+    },
+    {
+      "recording_id": "20170214-21-15_SL8RB_21938",
+      "recording_idx": 1,
+      "shape": [
+        180,
+        240
+      ],
+      "n_pixels": 43200,
+      "duration_s": 16.827803,
+      "keep_fraction": 1.0,
+      "n_events": 200000,
+      "pixel_occupancy": 0.9856944444444444,
+      "events_per_pixel": 4.62962962962963,
+      "method": "bilateral",
+      "family": "frame-based",
+      "seconds": 0.36795367800004897,
+      "ns_per_event": 1839.7683900002448,
+      "events_per_second": 543546.6798078137,
+      "peak_bytes": 40163894
+    },
+    {
+      "recording_id": "20170214-21-15_SL8RB_21938",
+      "recording_idx": 1,
+      "shape": [
+        180,
+        240
+      ],
+      "n_pixels": 43200,
+      "duration_s": 16.827803,
+      "keep_fraction": 1.0,
+      "n_events": 200000,
+      "pixel_occupancy": 0.9856944444444444,
+      "events_per_pixel": 4.62962962962963,
+      "method": "bilateral_ed",
+      "family": "event-driven",
+      "seconds": 0.057590803000493906,
+      "ns_per_event": 287.95401500246953,
+      "events_per_second": 3472776.7209338057,
+      "peak_bytes": 6947348
+    },
+    {
+      "recording_id": "20170214-21-15_SL8RB_21938",
+      "recording_idx": 1,
+      "shape": [
+        180,
+        240
+      ],
+      "n_pixels": 43200,
+      "duration_s": 16.827803,
+      "keep_fraction": 1.0,
+      "n_events": 200000,
+      "pixel_occupancy": 0.9856944444444444,
+      "events_per_pixel": 4.62962962962963,
+      "method": "ynoise",
+      "family": "event-driven",
+      "seconds": 0.01793060499949206,
+      "ns_per_event": 89.6530249974603,
+      "events_per_second": 11154113.316626271,
+      "peak_bytes": 6746972
+    },
+    {
+      "recording_id": "20170214-21-15_SL8RB_21938",
+      "recording_idx": 1,
+      "shape": [
+        180,
+        240
+      ],
+      "n_pixels": 43200,
+      "duration_s": 16.827803,
+      "keep_fraction": 1.0,
+      "n_events": 200000,
+      "pixel_occupancy": 0.9856944444444444,
+      "events_per_pixel": 4.62962962962963,
+      "method": "temporal",
+      "family": "frame-based",
+      "seconds": 0.06433394699888595,
+      "ns_per_event": 321.66973499442975,
+      "events_per_second": 3108778.6360047725,
+      "peak_bytes": 4003250
+    },
+    {
+      "recording_id": "20170214-21-15_SL8RB_21938",
+      "recording_idx": 1,
+      "shape": [
+        180,
+        240
+      ],
+      "n_pixels": 43200,
+      "duration_s": 16.827803,
+      "keep_fraction": 1.0,
+      "n_events": 200000,
+      "pixel_occupancy": 0.9856944444444444,
+      "events_per_pixel": 4.62962962962963,
+      "method": "recursive",
+      "family": "event-driven",
+      "seconds": 0.009224280998751055,
+      "ns_per_event": 46.12140499375528,
+      "events_per_second": 21681906.701137953,
+      "peak_bytes": 7135760
+    },
+    {
+      "recording_id": "20170214-21-15_SL8RB_21938",
+      "recording_idx": 1,
+      "shape": [
+        180,
+        240
+      ],
+      "n_pixels": 43200,
+      "duration_s": 16.827803,
+      "keep_fraction": 1.0,
+      "n_events": 200000,
+      "pixel_occupancy": 0.9856944444444444,
+      "events_per_pixel": 4.62962962962963,
+      "method": "edlr_zk",
+      "family": "event-driven",
+      "seconds": 0.05752726100035943,
+      "ns_per_event": 287.63630500179715,
+      "events_per_second": 3476612.5923977224,
+      "peak_bytes": 14643156
+    },
+    {
+      "recording_id": "20170214-21-15_SL8RB_21938",
+      "recording_idx": 1,
+      "shape": [
+        180,
+        240
+      ],
+      "n_pixels": 43200,
+      "duration_s": 16.827803,
+      "keep_fraction": 0.5,
+      "n_events": 100000,
+      "pixel_occupancy": 0.7827546296296296,
+      "events_per_pixel": 2.314814814814815,
+      "method": "edlr",
+      "family": "event-driven",
+      "seconds": 0.026033612999526667,
+      "ns_per_event": 260.3361299952667,
+      "events_per_second": 3841187.928921666,
+      "peak_bytes": 6695848
+    },
+    {
+      "recording_id": "20170214-21-15_SL8RB_21938",
+      "recording_idx": 1,
+      "shape": [
+        180,
+        240
+      ],
+      "n_pixels": 43200,
+      "duration_s": 16.827803,
+      "keep_fraction": 0.5,
+      "n_events": 100000,
+      "pixel_occupancy": 0.7827546296296296,
+      "events_per_pixel": 2.314814814814815,
+      "method": "plr",
+      "family": "frame-based",
+      "seconds": 0.37810542099941813,
+      "ns_per_event": 3781.0542099941813,
+      "events_per_second": 264476.504292579,
+      "peak_bytes": 138417844
+    },
+    {
+      "recording_id": "20170214-21-15_SL8RB_21938",
+      "recording_idx": 1,
+      "shape": [
+        180,
+        240
+      ],
+      "n_pixels": 43200,
+      "duration_s": 16.827803,
+      "keep_fraction": 0.5,
+      "n_events": 100000,
+      "pixel_occupancy": 0.7827546296296296,
+      "events_per_pixel": 2.314814814814815,
+      "method": "bilateral",
+      "family": "frame-based",
+      "seconds": 0.3726956840000639,
+      "ns_per_event": 3726.956840000639,
+      "events_per_second": 268315.4227243019,
+      "peak_bytes": 37363946
+    },
+    {
+      "recording_id": "20170214-21-15_SL8RB_21938",
+      "recording_idx": 1,
+      "shape": [
+        180,
+        240
+      ],
+      "n_pixels": 43200,
+      "duration_s": 16.827803,
+      "keep_fraction": 0.5,
+      "n_events": 100000,
+      "pixel_occupancy": 0.7827546296296296,
+      "events_per_pixel": 2.314814814814815,
+      "method": "bilateral_ed",
+      "family": "event-driven",
+      "seconds": 0.028829267001128756,
+      "ns_per_event": 288.29267001128756,
+      "events_per_second": 3468697.278917452,
+      "peak_bytes": 3647400
+    },
+    {
+      "recording_id": "20170214-21-15_SL8RB_21938",
+      "recording_idx": 1,
+      "shape": [
+        180,
+        240
+      ],
+      "n_pixels": 43200,
+      "duration_s": 16.827803,
+      "keep_fraction": 0.5,
+      "n_events": 100000,
+      "pixel_occupancy": 0.7827546296296296,
+      "events_per_pixel": 2.314814814814815,
+      "method": "ynoise",
+      "family": "event-driven",
+      "seconds": 0.0075437190007505706,
+      "ns_per_event": 75.4371900075057,
+      "events_per_second": 13256061.100638874,
+      "peak_bytes": 3547024
+    },
+    {
+      "recording_id": "20170214-21-15_SL8RB_21938",
+      "recording_idx": 1,
+      "shape": [
+        180,
+        240
+      ],
+      "n_pixels": 43200,
+      "duration_s": 16.827803,
+      "keep_fraction": 0.5,
+      "n_events": 100000,
+      "pixel_occupancy": 0.7827546296296296,
+      "events_per_pixel": 2.314814814814815,
+      "method": "temporal",
+      "family": "frame-based",
+      "seconds": 0.049394894998840755,
+      "ns_per_event": 493.94894998840755,
+      "events_per_second": 2024500.7100905243,
+      "peak_bytes": 2003250
+    },
+    {
+      "recording_id": "20170214-21-15_SL8RB_21938",
+      "recording_idx": 1,
+      "shape": [
+        180,
+        240
+      ],
+      "n_pixels": 43200,
+      "duration_s": 16.827803,
+      "keep_fraction": 0.5,
+      "n_events": 100000,
+      "pixel_occupancy": 0.7827546296296296,
+      "events_per_pixel": 2.314814814814815,
+      "method": "recursive",
+      "family": "event-driven",
+      "seconds": 0.004246585000146297,
+      "ns_per_event": 42.46585000146297,
+      "events_per_second": 23548333.54249472,
+      "peak_bytes": 3935760
+    },
+    {
+      "recording_id": "20170214-21-15_SL8RB_21938",
+      "recording_idx": 1,
+      "shape": [
+        180,
+        240
+      ],
+      "n_pixels": 43200,
+      "duration_s": 16.827803,
+      "keep_fraction": 0.5,
+      "n_events": 100000,
+      "pixel_occupancy": 0.7827546296296296,
+      "events_per_pixel": 2.314814814814815,
+      "method": "edlr_zk",
+      "family": "event-driven",
+      "seconds": 0.029432700999677763,
+      "ns_per_event": 294.32700999677763,
+      "events_per_second": 3397581.4860177063,
+      "peak_bytes": 7843585
+    },
+    {
+      "recording_id": "20170214-21-15_SL8RB_21938",
+      "recording_idx": 1,
+      "shape": [
+        180,
+        240
+      ],
+      "n_pixels": 43200,
+      "duration_s": 16.827803,
+      "keep_fraction": 0.25,
+      "n_events": 50000,
+      "pixel_occupancy": 0.5509027777777777,
+      "events_per_pixel": 1.1574074074074074,
+      "method": "edlr",
+      "family": "event-driven",
+      "seconds": 0.011825529001725954,
+      "ns_per_event": 236.51058003451908,
+      "events_per_second": 4228140.660151646,
+      "peak_bytes": 3695853
+    },
+    {
+      "recording_id": "20170214-21-15_SL8RB_21938",
+      "recording_idx": 1,
+      "shape": [
+        180,
+        240
+      ],
+      "n_pixels": 43200,
+      "duration_s": 16.827803,
+      "keep_fraction": 0.25,
+      "n_events": 50000,
+      "pixel_occupancy": 0.5509027777777777,
+      "events_per_pixel": 1.1574074074074074,
+      "method": "plr",
+      "family": "frame-based",
+      "seconds": 0.3724037579995638,
+      "ns_per_event": 7448.075159991276,
+      "events_per_second": 134262.87712182154,
+      "peak_bytes": 138417670
+    },
+    {
+      "recording_id": "20170214-21-15_SL8RB_21938",
+      "recording_idx": 1,
+      "shape": [
+        180,
+        240
+      ],
+      "n_pixels": 43200,
+      "duration_s": 16.827803,
+      "keep_fraction": 0.25,
+      "n_events": 50000,
+      "pixel_occupancy": 0.5509027777777777,
+      "events_per_pixel": 1.1574074074074074,
+      "method": "bilateral",
+      "family": "frame-based",
+      "seconds": 0.36426468799982104,
+      "ns_per_event": 7285.293759996421,
+      "events_per_second": 137262.8246634342,
+      "peak_bytes": 35963894
+    },
+    {
+      "recording_id": "20170214-21-15_SL8RB_21938",
+      "recording_idx": 1,
+      "shape": [
+        180,
+        240
+      ],
+      "n_pixels": 43200,
+      "duration_s": 16.827803,
+      "keep_fraction": 0.25,
+      "n_events": 50000,
+      "pixel_occupancy": 0.5509027777777777,
+      "events_per_pixel": 1.1574074074074074,
+      "method": "bilateral_ed",
+      "family": "event-driven",
+      "seconds": 0.014352135000081034,
+      "ns_per_event": 287.0427000016207,
+      "events_per_second": 3483802.2356755766,
+      "peak_bytes": 1997348
+    },
+    {
+      "recording_id": "20170214-21-15_SL8RB_21938",
+      "recording_idx": 1,
+      "shape": [
+        180,
+        240
+      ],
+      "n_pixels": 43200,
+      "duration_s": 16.827803,
+      "keep_fraction": 0.25,
+      "n_events": 50000,
+      "pixel_occupancy": 0.5509027777777777,
+      "events_per_pixel": 1.1574074074074074,
+      "method": "ynoise",
+      "family": "event-driven",
+      "seconds": 0.003262517000621301,
+      "ns_per_event": 65.25034001242602,
+      "events_per_second": 15325590.637681948,
+      "peak_bytes": 1946972
+    },
+    {
+      "recording_id": "20170214-21-15_SL8RB_21938",
+      "recording_idx": 1,
+      "shape": [
+        180,
+        240
+      ],
+      "n_pixels": 43200,
+      "duration_s": 16.827803,
+      "keep_fraction": 0.25,
+      "n_events": 50000,
+      "pixel_occupancy": 0.5509027777777777,
+      "events_per_pixel": 1.1574074074074074,
+      "method": "temporal",
+      "family": "frame-based",
+      "seconds": 0.04322673400019994,
+      "ns_per_event": 864.5346800039988,
+      "events_per_second": 1156691.5973751042,
+      "peak_bytes": 1301102
+    },
+    {
+      "recording_id": "20170214-21-15_SL8RB_21938",
+      "recording_idx": 1,
+      "shape": [
+        180,
+        240
+      ],
+      "n_pixels": 43200,
+      "duration_s": 16.827803,
+      "keep_fraction": 0.25,
+      "n_events": 50000,
+      "pixel_occupancy": 0.5509027777777777,
+      "events_per_pixel": 1.1574074074074074,
+      "method": "recursive",
+      "family": "event-driven",
+      "seconds": 0.0017813449994719122,
+      "ns_per_event": 35.62689998943824,
+      "events_per_second": 28068678.450733982,
+      "peak_bytes": 2335760
+    },
+    {
+      "recording_id": "20170214-21-15_SL8RB_21938",
+      "recording_idx": 1,
+      "shape": [
+        180,
+        240
+      ],
+      "n_pixels": 43200,
+      "duration_s": 16.827803,
+      "keep_fraction": 0.25,
+      "n_events": 50000,
+      "pixel_occupancy": 0.5509027777777777,
+      "events_per_pixel": 1.1574074074074074,
+      "method": "edlr_zk",
+      "family": "event-driven",
+      "seconds": 0.013152626001101453,
+      "ns_per_event": 263.05252002202906,
+      "events_per_second": 3801522.2204153608,
+      "peak_bytes": 4442983
+    },
+    {
+      "recording_id": "20170214-21-15_SL8RB_21938",
+      "recording_idx": 1,
+      "shape": [
+        180,
+        240
+      ],
+      "n_pixels": 43200,
+      "duration_s": 16.827803,
+      "keep_fraction": 0.1,
+      "n_events": 20000,
+      "pixel_occupancy": 0.3004398148148148,
+      "events_per_pixel": 0.46296296296296297,
+      "method": "edlr",
+      "family": "event-driven",
+      "seconds": 0.004660559001422371,
+      "ns_per_event": 233.02795007111854,
+      "events_per_second": 4291330.716743665,
+      "peak_bytes": 1981394
+    },
+    {
+      "recording_id": "20170214-21-15_SL8RB_21938",
+      "recording_idx": 1,
+      "shape": [
+        180,
+        240
+      ],
+      "n_pixels": 43200,
+      "duration_s": 16.827803,
+      "keep_fraction": 0.1,
+      "n_events": 20000,
+      "pixel_occupancy": 0.3004398148148148,
+      "events_per_pixel": 0.46296296296296297,
+      "method": "plr",
+      "family": "frame-based",
+      "seconds": 0.3645282840006985,
+      "ns_per_event": 18226.414200034924,
+      "events_per_second": 54865.427122691195,
+      "peak_bytes": 138417318
+    },
+    {
+      "recording_id": "20170214-21-15_SL8RB_21938",
+      "recording_idx": 1,
+      "shape": [
+        180,
+        240
+      ],
+      "n_pixels": 43200,
+      "duration_s": 16.827803,
+      "keep_fraction": 0.1,
+      "n_events": 20000,
+      "pixel_occupancy": 0.3004398148148148,
+      "events_per_pixel": 0.46296296296296297,
+      "method": "bilateral",
+      "family": "frame-based",
+      "seconds": 0.3516990869993606,
+      "ns_per_event": 17584.95434996803,
+      "events_per_second": 56866.795335287185,
+      "peak_bytes": 35123894
+    },
+    {
+      "recording_id": "20170214-21-15_SL8RB_21938",
+      "recording_idx": 1,
+      "shape": [
+        180,
+        240
+      ],
+      "n_pixels": 43200,
+      "duration_s": 16.827803,
+      "keep_fraction": 0.1,
+      "n_events": 20000,
+      "pixel_occupancy": 0.3004398148148148,
+      "events_per_pixel": 0.46296296296296297,
+      "method": "bilateral_ed",
+      "family": "event-driven",
+      "seconds": 0.00584551399879274,
+      "ns_per_event": 292.275699939637,
+      "events_per_second": 3421427.098477662,
+      "peak_bytes": 1007348
+    },
+    {
+      "recording_id": "20170214-21-15_SL8RB_21938",
+      "recording_idx": 1,
+      "shape": [
+        180,
+        240
+      ],
+      "n_pixels": 43200,
+      "duration_s": 16.827803,
+      "keep_fraction": 0.1,
+      "n_events": 20000,
+      "pixel_occupancy": 0.3004398148148148,
+      "events_per_pixel": 0.46296296296296297,
+      "method": "ynoise",
+      "family": "event-driven",
+      "seconds": 0.0011388189996068832,
+      "ns_per_event": 56.94094998034416,
+      "events_per_second": 17562053.32621245,
+      "peak_bytes": 986972
+    },
+    {
+      "recording_id": "20170214-21-15_SL8RB_21938",
+      "recording_idx": 1,
+      "shape": [
+        180,
+        240
+      ],
+      "n_pixels": 43200,
+      "duration_s": 16.827803,
+      "keep_fraction": 0.1,
+      "n_events": 20000,
+      "pixel_occupancy": 0.3004398148148148,
+      "events_per_pixel": 0.46296296296296297,
+      "method": "temporal",
+      "family": "frame-based",
+      "seconds": 0.036924853000527946,
+      "ns_per_event": 1846.2426500263973,
+      "events_per_second": 541640.6126170371,
+      "peak_bytes": 937058
+    },
+    {
+      "recording_id": "20170214-21-15_SL8RB_21938",
+      "recording_idx": 1,
+      "shape": [
+        180,
+        240
+      ],
+      "n_pixels": 43200,
+      "duration_s": 16.827803,
+      "keep_fraction": 0.1,
+      "n_events": 20000,
+      "pixel_occupancy": 0.3004398148148148,
+      "events_per_pixel": 0.46296296296296297,
+      "method": "recursive",
+      "family": "event-driven",
+      "seconds": 0.0005635030011035269,
+      "ns_per_event": 28.175150055176346,
+      "events_per_second": 35492268.827021904,
+      "peak_bytes": 1375760
+    },
+    {
+      "recording_id": "20170214-21-15_SL8RB_21938",
+      "recording_idx": 1,
+      "shape": [
+        180,
+        240
+      ],
+      "n_pixels": 43200,
+      "duration_s": 16.827803,
+      "keep_fraction": 0.1,
+      "n_events": 20000,
+      "pixel_occupancy": 0.3004398148148148,
+      "events_per_pixel": 0.46296296296296297,
+      "method": "edlr_zk",
+      "family": "event-driven",
+      "seconds": 0.005677029999787919,
+      "ns_per_event": 283.85149998939596,
+      "events_per_second": 3522968.876463072,
+      "peak_bytes": 2488549
+    },
+    {
+      "recording_id": "20170214-21-15_SL8RB_21938",
+      "recording_idx": 1,
+      "shape": [
+        180,
+        240
+      ],
+      "n_pixels": 43200,
+      "duration_s": 16.827803,
+      "keep_fraction": 0.05,
+      "n_events": 10000,
+      "pixel_occupancy": 0.17243055555555556,
+      "events_per_pixel": 0.23148148148148148,
+      "method": "edlr",
+      "family": "event-driven",
+      "seconds": 0.002553989999796613,
+      "ns_per_event": 255.3989999796613,
+      "events_per_second": 3915442.112457899,
+      "peak_bytes": 1641766
+    },
+    {
+      "recording_id": "20170214-21-15_SL8RB_21938",
+      "recording_idx": 1,
+      "shape": [
+        180,
+        240
+      ],
+      "n_pixels": 43200,
+      "duration_s": 16.827803,
+      "keep_fraction": 0.05,
+      "n_events": 10000,
+      "pixel_occupancy": 0.17243055555555556,
+      "events_per_pixel": 0.23148148148148148,
+      "method": "plr",
+      "family": "frame-based",
+      "seconds": 0.35164465100024245,
+      "ns_per_event": 35164.465100024245,
+      "events_per_second": 28437.799271381795,
+      "peak_bytes": 138417214
+    },
+    {
+      "recording_id": "20170214-21-15_SL8RB_21938",
+      "recording_idx": 1,
+      "shape": [
+        180,
+        240
+      ],
+      "n_pixels": 43200,
+      "duration_s": 16.827803,
+      "keep_fraction": 0.05,
+      "n_events": 10000,
+      "pixel_occupancy": 0.17243055555555556,
+      "events_per_pixel": 0.23148148148148148,
+      "method": "bilateral",
+      "family": "frame-based",
+      "seconds": 0.3602268360009475,
+      "ns_per_event": 36022.68360009475,
+      "events_per_second": 27760.286021482578,
+      "peak_bytes": 34843894
+    },
+    {
+      "recording_id": "20170214-21-15_SL8RB_21938",
+      "recording_idx": 1,
+      "shape": [
+        180,
+        240
+      ],
+      "n_pixels": 43200,
+      "duration_s": 16.827803,
+      "keep_fraction": 0.05,
+      "n_events": 10000,
+      "pixel_occupancy": 0.17243055555555556,
+      "events_per_pixel": 0.23148148148148148,
+      "method": "bilateral_ed",
+      "family": "event-driven",
+      "seconds": 0.0031939880009304034,
+      "ns_per_event": 319.39880009304034,
+      "events_per_second": 3130882.143917578,
+      "peak_bytes": 677348
+    },
+    {
+      "recording_id": "20170214-21-15_SL8RB_21938",
+      "recording_idx": 1,
+      "shape": [
+        180,
+        240
+      ],
+      "n_pixels": 43200,
+      "duration_s": 16.827803,
+      "keep_fraction": 0.05,
+      "n_events": 10000,
+      "pixel_occupancy": 0.17243055555555556,
+      "events_per_pixel": 0.23148148148148148,
+      "method": "ynoise",
+      "family": "event-driven",
+      "seconds": 0.0006181000007927651,
+      "ns_per_event": 61.810000079276506,
+      "events_per_second": 16178611.85435069,
+      "peak_bytes": 666972
+    },
+    {
+      "recording_id": "20170214-21-15_SL8RB_21938",
+      "recording_idx": 1,
+      "shape": [
+        180,
+        240
+      ],
+      "n_pixels": 43200,
+      "duration_s": 16.827803,
+      "keep_fraction": 0.05,
+      "n_events": 10000,
+      "pixel_occupancy": 0.17243055555555556,
+      "events_per_pixel": 0.23148148148148148,
+      "method": "temporal",
+      "family": "frame-based",
+      "seconds": 0.03964798499873723,
+      "ns_per_event": 3964.7984998737234,
+      "events_per_second": 252219.62731065642,
+      "peak_bytes": 815780
+    },
+    {
+      "recording_id": "20170214-21-15_SL8RB_21938",
+      "recording_idx": 1,
+      "shape": [
+        180,
+        240
+      ],
+      "n_pixels": 43200,
+      "duration_s": 16.827803,
+      "keep_fraction": 0.05,
+      "n_events": 10000,
+      "pixel_occupancy": 0.17243055555555556,
+      "events_per_pixel": 0.23148148148148148,
+      "method": "recursive",
+      "family": "event-driven",
+      "seconds": 0.00027342899920768104,
+      "ns_per_event": 27.342899920768104,
+      "events_per_second": 36572565.56172585,
+      "peak_bytes": 1055760
+    },
+    {
+      "recording_id": "20170214-21-15_SL8RB_21938",
+      "recording_idx": 1,
+      "shape": [
+        180,
+        240
+      ],
+      "n_pixels": 43200,
+      "duration_s": 16.827803,
+      "keep_fraction": 0.05,
+      "n_events": 10000,
+      "pixel_occupancy": 0.17243055555555556,
+      "events_per_pixel": 0.23148148148148148,
+      "method": "edlr_zk",
+      "family": "event-driven",
+      "seconds": 0.0035112939985992853,
+      "ns_per_event": 351.1293998599285,
+      "events_per_second": 2847952.921056787,
+      "peak_bytes": 2068779
+    },
+    {
+      "recording_id": "20170214-21-15_SL8RB_21938",
+      "recording_idx": 1,
+      "shape": [
+        180,
+        240
+      ],
+      "n_pixels": 43200,
+      "duration_s": 16.827803,
+      "keep_fraction": 0.02,
+      "n_events": 4000,
+      "pixel_occupancy": 0.07699074074074073,
+      "events_per_pixel": 0.09259259259259259,
+      "method": "edlr",
+      "family": "event-driven",
+      "seconds": 0.0015989309995347867,
+      "ns_per_event": 399.73274988369667,
+      "events_per_second": 2501671.4299515183,
+      "peak_bytes": 1593766
+    },
+    {
+      "recording_id": "20170214-21-15_SL8RB_21938",
+      "recording_idx": 1,
+      "shape": [
+        180,
+        240
+      ],
+      "n_pixels": 43200,
+      "duration_s": 16.827803,
+      "keep_fraction": 0.02,
+      "n_events": 4000,
+      "pixel_occupancy": 0.07699074074074073,
+      "events_per_pixel": 0.09259259259259259,
+      "method": "plr",
+      "family": "frame-based",
+      "seconds": 0.3646620529998472,
+      "ns_per_event": 91165.5132499618,
+      "events_per_second": 10969.060167062888,
+      "peak_bytes": 138417312
+    },
+    {
+      "recording_id": "20170214-21-15_SL8RB_21938",
+      "recording_idx": 1,
+      "shape": [
+        180,
+        240
+      ],
+      "n_pixels": 43200,
+      "duration_s": 16.827803,
+      "keep_fraction": 0.02,
+      "n_events": 4000,
+      "pixel_occupancy": 0.07699074074074073,
+      "events_per_pixel": 0.09259259259259259,
+      "method": "bilateral",
+      "family": "frame-based",
+      "seconds": 0.35629515599976,
+      "ns_per_event": 89073.78899994,
+      "events_per_second": 11226.647156557734,
+      "peak_bytes": 34675894
+    },
+    {
+      "recording_id": "20170214-21-15_SL8RB_21938",
+      "recording_idx": 1,
+      "shape": [
+        180,
+        240
+      ],
+      "n_pixels": 43200,
+      "duration_s": 16.827803,
+      "keep_fraction": 0.02,
+      "n_events": 4000,
+      "pixel_occupancy": 0.07699074074074073,
+      "events_per_pixel": 0.09259259259259259,
+      "method": "bilateral_ed",
+      "family": "event-driven",
+      "seconds": 0.0012134529988543363,
+      "ns_per_event": 303.3632497135841,
+      "events_per_second": 3296378.1899888506,
+      "peak_bytes": 479348
+    },
+    {
+      "recording_id": "20170214-21-15_SL8RB_21938",
+      "recording_idx": 1,
+      "shape": [
+        180,
+        240
+      ],
+      "n_pixels": 43200,
+      "duration_s": 16.827803,
+      "keep_fraction": 0.02,
+      "n_events": 4000,
+      "pixel_occupancy": 0.07699074074074073,
+      "events_per_pixel": 0.09259259259259259,
+      "method": "ynoise",
+      "family": "event-driven",
+      "seconds": 0.0002397479984210804,
+      "ns_per_event": 59.9369996052701,
+      "events_per_second": 16684185.170858514,
+      "peak_bytes": 474972
+    },
+    {
+      "recording_id": "20170214-21-15_SL8RB_21938",
+      "recording_idx": 1,
+      "shape": [
+        180,
+        240
+      ],
+      "n_pixels": 43200,
+      "duration_s": 16.827803,
+      "keep_fraction": 0.02,
+      "n_events": 4000,
+      "pixel_occupancy": 0.07699074074074073,
+      "events_per_pixel": 0.09259259259259259,
+      "method": "temporal",
+      "family": "frame-based",
+      "seconds": 0.03413016499871446,
+      "ns_per_event": 8532.541249678616,
+      "events_per_second": 117198.37862344536,
+      "peak_bytes": 743236
+    },
+    {
+      "recording_id": "20170214-21-15_SL8RB_21938",
+      "recording_idx": 1,
+      "shape": [
+        180,
+        240
+      ],
+      "n_pixels": 43200,
+      "duration_s": 16.827803,
+      "keep_fraction": 0.02,
+      "n_events": 4000,
+      "pixel_occupancy": 0.07699074074074073,
+      "events_per_pixel": 0.09259259259259259,
+      "method": "recursive",
+      "family": "event-driven",
+      "seconds": 0.00011535399971762672,
+      "ns_per_event": 28.83849992940668,
+      "events_per_second": 34675867.41501412,
+      "peak_bytes": 863760
+    },
+    {
+      "recording_id": "20170214-21-15_SL8RB_21938",
+      "recording_idx": 1,
+      "shape": [
+        180,
+        240
+      ],
+      "n_pixels": 43200,
+      "duration_s": 16.827803,
+      "keep_fraction": 0.02,
+      "n_events": 4000,
+      "pixel_occupancy": 0.07699074074074073,
+      "events_per_pixel": 0.09259259259259259,
+      "method": "edlr_zk",
+      "family": "event-driven",
+      "seconds": 0.0020470529998419806,
+      "ns_per_event": 511.76324996049516,
+      "events_per_second": 1954028.5475309014,
+      "peak_bytes": 1972779
+    },
+    {
+      "recording_id": "20170214-21-15_SL8RB_21938",
+      "recording_idx": 1,
+      "shape": [
+        180,
+        240
+      ],
+      "n_pixels": 43200,
+      "duration_s": 16.827803,
+      "keep_fraction": 0.01,
+      "n_events": 2000,
+      "pixel_occupancy": 0.040740740740740744,
+      "events_per_pixel": 0.046296296296296294,
+      "method": "edlr",
+      "family": "event-driven",
+      "seconds": 0.0011050869998143753,
+      "ns_per_event": 552.5434999071877,
+      "events_per_second": 1809812.259429299,
+      "peak_bytes": 1577825
+    },
+    {
+      "recording_id": "20170214-21-15_SL8RB_21938",
+      "recording_idx": 1,
+      "shape": [
+        180,
+        240
+      ],
+      "n_pixels": 43200,
+      "duration_s": 16.827803,
+      "keep_fraction": 0.01,
+      "n_events": 2000,
+      "pixel_occupancy": 0.040740740740740744,
+      "events_per_pixel": 0.046296296296296294,
+      "method": "plr",
+      "family": "frame-based",
+      "seconds": 0.35239172100045835,
+      "ns_per_event": 176195.86050022917,
+      "events_per_second": 5675.5022346208825,
+      "peak_bytes": 138417214
+    },
+    {
+      "recording_id": "20170214-21-15_SL8RB_21938",
+      "recording_idx": 1,
+      "shape": [
+        180,
+        240
+      ],
+      "n_pixels": 43200,
+      "duration_s": 16.827803,
+      "keep_fraction": 0.01,
+      "n_events": 2000,
+      "pixel_occupancy": 0.040740740740740744,
+      "events_per_pixel": 0.046296296296296294,
+      "method": "bilateral",
+      "family": "frame-based",
+      "seconds": 0.35770233099901816,
+      "ns_per_event": 178851.16549950908,
+      "events_per_second": 5591.241170875931,
+      "peak_bytes": 34619894
+    },
+    {
+      "recording_id": "20170214-21-15_SL8RB_21938",
+      "recording_idx": 1,
+      "shape": [
+        180,
+        240
+      ],
+      "n_pixels": 43200,
+      "duration_s": 16.827803,
+      "keep_fraction": 0.01,
+      "n_events": 2000,
+      "pixel_occupancy": 0.040740740740740744,
+      "events_per_pixel": 0.046296296296296294,
+      "method": "bilateral_ed",
+      "family": "event-driven",
+      "seconds": 0.0006483870001829928,
+      "ns_per_event": 324.1935000914964,
+      "events_per_second": 3084577.57394202,
+      "peak_bytes": 413348
+    },
+    {
+      "recording_id": "20170214-21-15_SL8RB_21938",
+      "recording_idx": 1,
+      "shape": [
+        180,
+        240
+      ],
+      "n_pixels": 43200,
+      "duration_s": 16.827803,
+      "keep_fraction": 0.01,
+      "n_events": 2000,
+      "pixel_occupancy": 0.040740740740740744,
+      "events_per_pixel": 0.046296296296296294,
+      "method": "ynoise",
+      "family": "event-driven",
+      "seconds": 0.00014383200141310226,
+      "ns_per_event": 71.91600070655113,
+      "events_per_second": 13905111.38238122,
+      "peak_bytes": 410972
+    },
+    {
+      "recording_id": "20170214-21-15_SL8RB_21938",
+      "recording_idx": 1,
+      "shape": [
+        180,
+        240
+      ],
+      "n_pixels": 43200,
+      "duration_s": 16.827803,
+      "keep_fraction": 0.01,
+      "n_events": 2000,
+      "pixel_occupancy": 0.040740740740740744,
+      "events_per_pixel": 0.046296296296296294,
+      "method": "temporal",
+      "family": "frame-based",
+      "seconds": 0.03403085299942177,
+      "ns_per_event": 17015.426499710884,
+      "events_per_second": 58770.19891431998,
+      "peak_bytes": 719082
+    },
+    {
+      "recording_id": "20170214-21-15_SL8RB_21938",
+      "recording_idx": 1,
+      "shape": [
+        180,
+        240
+      ],
+      "n_pixels": 43200,
+      "duration_s": 16.827803,
+      "keep_fraction": 0.01,
+      "n_events": 2000,
+      "pixel_occupancy": 0.040740740740740744,
+      "events_per_pixel": 0.046296296296296294,
+      "method": "recursive",
+      "family": "event-driven",
+      "seconds": 7.098399873939343e-05,
+      "ns_per_event": 35.491999369696714,
+      "events_per_second": 28175363.962555632,
+      "peak_bytes": 799760
+    },
+    {
+      "recording_id": "20170214-21-15_SL8RB_21938",
+      "recording_idx": 1,
+      "shape": [
+        180,
+        240
+      ],
+      "n_pixels": 43200,
+      "duration_s": 16.827803,
+      "keep_fraction": 0.01,
+      "n_events": 2000,
+      "pixel_occupancy": 0.040740740740740744,
+      "events_per_pixel": 0.046296296296296294,
+      "method": "edlr_zk",
+      "family": "event-driven",
+      "seconds": 0.0017074659990612417,
+      "ns_per_event": 853.7329995306209,
+      "events_per_second": 1171326.3989441618,
+      "peak_bytes": 1940834
+    },
+    {
+      "recording_id": "ISS_2_td",
+      "recording_idx": 2,
+      "shape": [
+        240,
+        304
+      ],
+      "n_pixels": 72960,
+      "duration_s": 6.848512,
+      "keep_fraction": 1.0,
+      "n_events": 200000,
+      "pixel_occupancy": 0.2091419956140351,
+      "events_per_pixel": 2.741228070175439,
+      "method": "edlr",
+      "family": "event-driven",
+      "seconds": 0.049547681999683846,
+      "ns_per_event": 247.73840999841926,
+      "events_per_second": 4036515.7748706825,
+      "peak_bytes": 13171949
+    },
+    {
+      "recording_id": "ISS_2_td",
+      "recording_idx": 2,
+      "shape": [
+        240,
+        304
+      ],
+      "n_pixels": 72960,
+      "duration_s": 6.848512,
+      "keep_fraction": 1.0,
+      "n_events": 200000,
+      "pixel_occupancy": 0.2091419956140351,
+      "events_per_pixel": 2.741228070175439,
+      "method": "plr",
+      "family": "frame-based",
+      "seconds": 0.6871099439995305,
+      "ns_per_event": 3435.5497199976526,
+      "events_per_second": 291074.2330926543,
+      "peak_bytes": 233768166
+    },
+    {
+      "recording_id": "ISS_2_td",
+      "recording_idx": 2,
+      "shape": [
+        240,
+        304
+      ],
+      "n_pixels": 72960,
+      "duration_s": 6.848512,
+      "keep_fraction": 1.0,
+      "n_events": 200000,
+      "pixel_occupancy": 0.2091419956140351,
+      "events_per_pixel": 2.741228070175439,
+      "method": "bilateral",
+      "family": "frame-based",
+      "seconds": 0.6310489570005302,
+      "ns_per_event": 3155.244785002651,
+      "events_per_second": 316932.621124405,
+      "peak_bytes": 63971894
+    },
+    {
+      "recording_id": "ISS_2_td",
+      "recording_idx": 2,
+      "shape": [
+        240,
+        304
+      ],
+      "n_pixels": 72960,
+      "duration_s": 6.848512,
+      "keep_fraction": 1.0,
+      "n_events": 200000,
+      "pixel_occupancy": 0.2091419956140351,
+      "events_per_pixel": 2.741228070175439,
+      "method": "bilateral_ed",
+      "family": "event-driven",
+      "seconds": 0.05881669699920167,
+      "ns_per_event": 294.08348499600834,
+      "events_per_second": 3400394.959321069,
+      "peak_bytes": 7185428
+    },
+    {
+      "recording_id": "ISS_2_td",
+      "recording_idx": 2,
+      "shape": [
+        240,
+        304
+      ],
+      "n_pixels": 72960,
+      "duration_s": 6.848512,
+      "keep_fraction": 1.0,
+      "n_events": 200000,
+      "pixel_occupancy": 0.2091419956140351,
+      "events_per_pixel": 2.741228070175439,
+      "method": "ynoise",
+      "family": "event-driven",
+      "seconds": 0.013096246000714018,
+      "ns_per_event": 65.48123000357009,
+      "events_per_second": 15271551.862197444,
+      "peak_bytes": 6985052
+    },
+    {
+      "recording_id": "ISS_2_td",
+      "recording_idx": 2,
+      "shape": [
+        240,
+        304
+      ],
+      "n_pixels": 72960,
+      "duration_s": 6.848512,
+      "keep_fraction": 1.0,
+      "n_events": 200000,
+      "pixel_occupancy": 0.2091419956140351,
+      "events_per_pixel": 2.741228070175439,
+      "method": "temporal",
+      "family": "frame-based",
+      "seconds": 0.043867143998795655,
+      "ns_per_event": 219.33571999397827,
+      "events_per_second": 4559220.905867291,
+      "peak_bytes": 4002450
+    },
+    {
+      "recording_id": "ISS_2_td",
+      "recording_idx": 2,
+      "shape": [
+        240,
+        304
+      ],
+      "n_pixels": 72960,
+      "duration_s": 6.848512,
+      "keep_fraction": 1.0,
+      "n_events": 200000,
+      "pixel_occupancy": 0.2091419956140351,
+      "events_per_pixel": 2.741228070175439,
+      "method": "recursive",
+      "family": "event-driven",
+      "seconds": 0.006419956998797716,
+      "ns_per_event": 32.09978499398858,
+      "events_per_second": 31152856.63711682,
+      "peak_bytes": 7641680
+    },
+    {
+      "recording_id": "ISS_2_td",
+      "recording_idx": 2,
+      "shape": [
+        240,
+        304
+      ],
+      "n_pixels": 72960,
+      "duration_s": 6.848512,
+      "keep_fraction": 1.0,
+      "n_events": 200000,
+      "pixel_occupancy": 0.2091419956140351,
+      "events_per_pixel": 2.741228070175439,
+      "method": "edlr_zk",
+      "family": "event-driven",
+      "seconds": 0.05126295199988817,
+      "ns_per_event": 256.31475999944087,
+      "events_per_second": 3901453.041573499,
+      "peak_bytes": 15357168
+    },
+    {
+      "recording_id": "ISS_2_td",
+      "recording_idx": 2,
+      "shape": [
+        240,
+        304
+      ],
+      "n_pixels": 72960,
+      "duration_s": 6.848512,
+      "keep_fraction": 0.5,
+      "n_events": 100000,
+      "pixel_occupancy": 0.1482456140350877,
+      "events_per_pixel": 1.3706140350877194,
+      "method": "edlr",
+      "family": "event-driven",
+      "seconds": 0.025404396999874734,
+      "ns_per_event": 254.04396999874737,
+      "events_per_second": 3936326.4556325856,
+      "peak_bytes": 7171949
+    },
+    {
+      "recording_id": "ISS_2_td",
+      "recording_idx": 2,
+      "shape": [
+        240,
+        304
+      ],
+      "n_pixels": 72960,
+      "duration_s": 6.848512,
+      "keep_fraction": 0.5,
+      "n_events": 100000,
+      "pixel_occupancy": 0.1482456140350877,
+      "events_per_pixel": 1.3706140350877194,
+      "method": "plr",
+      "family": "frame-based",
+      "seconds": 0.6653780579999875,
+      "ns_per_event": 6653.780579999875,
+      "events_per_second": 150290.49845824923,
+      "peak_bytes": 233768218
+    },
+    {
+      "recording_id": "ISS_2_td",
+      "recording_idx": 2,
+      "shape": [
+        240,
+        304
+      ],
+      "n_pixels": 72960,
+      "duration_s": 6.848512,
+      "keep_fraction": 0.5,
+      "n_events": 100000,
+      "pixel_occupancy": 0.1482456140350877,
+      "events_per_pixel": 1.3706140350877194,
+      "method": "bilateral",
+      "family": "frame-based",
+      "seconds": 0.6351667489998363,
+      "ns_per_event": 6351.667489998363,
+      "events_per_second": 157438.97198249868,
+      "peak_bytes": 61171894
+    },
+    {
+      "recording_id": "ISS_2_td",
+      "recording_idx": 2,
+      "shape": [
+        240,
+        304
+      ],
+      "n_pixels": 72960,
+      "duration_s": 6.848512,
+      "keep_fraction": 0.5,
+      "n_events": 100000,
+      "pixel_occupancy": 0.1482456140350877,
+      "events_per_pixel": 1.3706140350877194,
+      "method": "bilateral_ed",
+      "family": "event-driven",
+      "seconds": 0.02896746499936853,
+      "ns_per_event": 289.6746499936853,
+      "events_per_second": 3452148.8159968406,
+      "peak_bytes": 3885428
+    },
+    {
+      "recording_id": "ISS_2_td",
+      "recording_idx": 2,
+      "shape": [
+        240,
+        304
+      ],
+      "n_pixels": 72960,
+      "duration_s": 6.848512,
+      "keep_fraction": 0.5,
+      "n_events": 100000,
+      "pixel_occupancy": 0.1482456140350877,
+      "events_per_pixel": 1.3706140350877194,
+      "method": "ynoise",
+      "family": "event-driven",
+      "seconds": 0.006341346001136117,
+      "ns_per_event": 63.41346001136116,
+      "events_per_second": 15769522.745184379,
+      "peak_bytes": 3785052
+    },
+    {
+      "recording_id": "ISS_2_td",
+      "recording_idx": 2,
+      "shape": [
+        240,
+        304
+      ],
+      "n_pixels": 72960,
+      "duration_s": 6.848512,
+      "keep_fraction": 0.5,
+      "n_events": 100000,
+      "pixel_occupancy": 0.1482456140350877,
+      "events_per_pixel": 1.3706140350877194,
+      "method": "temporal",
+      "family": "frame-based",
+      "seconds": 0.03406953400008206,
+      "ns_per_event": 340.6953400008206,
+      "events_per_second": 2935173.695060201,
+      "peak_bytes": 2098822
+    },
+    {
+      "recording_id": "ISS_2_td",
+      "recording_idx": 2,
+      "shape": [
+        240,
+        304
+      ],
+      "n_pixels": 72960,
+      "duration_s": 6.848512,
+      "keep_fraction": 0.5,
+      "n_events": 100000,
+      "pixel_occupancy": 0.1482456140350877,
+      "events_per_pixel": 1.3706140350877194,
+      "method": "recursive",
+      "family": "event-driven",
+      "seconds": 0.003006857999935164,
+      "ns_per_event": 30.068579999351645,
+      "events_per_second": 33257307.129953016,
+      "peak_bytes": 4441680
+    },
+    {
+      "recording_id": "ISS_2_td",
+      "recording_idx": 2,
+      "shape": [
+        240,
+        304
+      ],
+      "n_pixels": 72960,
+      "duration_s": 6.848512,
+      "keep_fraction": 0.5,
+      "n_events": 100000,
+      "pixel_occupancy": 0.1482456140350877,
+      "events_per_pixel": 1.3706140350877194,
+      "method": "edlr_zk",
+      "family": "event-driven",
+      "seconds": 0.027022214000680833,
+      "ns_per_event": 270.22214000680833,
+      "events_per_second": 3700659.020666496,
+      "peak_bytes": 8557007
+    },
+    {
+      "recording_id": "ISS_2_td",
+      "recording_idx": 2,
+      "shape": [
+        240,
+        304
+      ],
+      "n_pixels": 72960,
+      "duration_s": 6.848512,
+      "keep_fraction": 0.25,
+      "n_events": 50000,
+      "pixel_occupancy": 0.10123355263157895,
+      "events_per_pixel": 0.6853070175438597,
+      "method": "edlr",
+      "family": "event-driven",
+      "seconds": 0.013307529001394869,
+      "ns_per_event": 266.1505800278974,
+      "events_per_second": 3757271.541152313,
+      "peak_bytes": 4171840
+    },
+    {
+      "recording_id": "ISS_2_td",
+      "recording_idx": 2,
+      "shape": [
+        240,
+        304
+      ],
+      "n_pixels": 72960,
+      "duration_s": 6.848512,
+      "keep_fraction": 0.25,
+      "n_events": 50000,
+      "pixel_occupancy": 0.10123355263157895,
+      "events_per_pixel": 0.6853070175438597,
+      "method": "plr",
+      "family": "frame-based",
+      "seconds": 0.6539240849997441,
+      "ns_per_event": 13078.481699994882,
+      "events_per_second": 76461.47488208752,
+      "peak_bytes": 233768172
+    },
+    {
+      "recording_id": "ISS_2_td",
+      "recording_idx": 2,
+      "shape": [
+        240,
+        304
+      ],
+      "n_pixels": 72960,
+      "duration_s": 6.848512,
+      "keep_fraction": 0.25,
+      "n_events": 50000,
+      "pixel_occupancy": 0.10123355263157895,
+      "events_per_pixel": 0.6853070175438597,
+      "method": "bilateral",
+      "family": "frame-based",
+      "seconds": 0.6388547759997891,
+      "ns_per_event": 12777.095519995783,
+      "events_per_second": 78265.04845604615,
+      "peak_bytes": 59772010
+    },
+    {
+      "recording_id": "ISS_2_td",
+      "recording_idx": 2,
+      "shape": [
+        240,
+        304
+      ],
+      "n_pixels": 72960,
+      "duration_s": 6.848512,
+      "keep_fraction": 0.25,
+      "n_events": 50000,
+      "pixel_occupancy": 0.10123355263157895,
+      "events_per_pixel": 0.6853070175438597,
+      "method": "bilateral_ed",
+      "family": "event-driven",
+      "seconds": 0.014550777001204551,
+      "ns_per_event": 291.015540024091,
+      "events_per_second": 3436242.6141133816,
+      "peak_bytes": 2235428
+    },
+    {
+      "recording_id": "ISS_2_td",
+      "recording_idx": 2,
+      "shape": [
+        240,
+        304
+      ],
+      "n_pixels": 72960,
+      "duration_s": 6.848512,
+      "keep_fraction": 0.25,
+      "n_events": 50000,
+      "pixel_occupancy": 0.10123355263157895,
+      "events_per_pixel": 0.6853070175438597,
+      "method": "ynoise",
+      "family": "event-driven",
+      "seconds": 0.003090117999818176,
+      "ns_per_event": 61.80235999636352,
+      "events_per_second": 16180611.874026177,
+      "peak_bytes": 2185052
+    },
+    {
+      "recording_id": "ISS_2_td",
+      "recording_idx": 2,
+      "shape": [
+        240,
+        304
+      ],
+      "n_pixels": 72960,
+      "duration_s": 6.848512,
+      "keep_fraction": 0.25,
+      "n_events": 50000,
+      "pixel_occupancy": 0.10123355263157895,
+      "events_per_pixel": 0.6853070175438597,
+      "method": "temporal",
+      "family": "frame-based",
+      "seconds": 0.02830903600079182,
+      "ns_per_event": 566.1807200158364,
+      "events_per_second": 1766220.5098966092,
+      "peak_bytes": 1488874
+    },
+    {
+      "recording_id": "ISS_2_td",
+      "recording_idx": 2,
+      "shape": [
+        240,
+        304
+      ],
+      "n_pixels": 72960,
+      "duration_s": 6.848512,
+      "keep_fraction": 0.25,
+      "n_events": 50000,
+      "pixel_occupancy": 0.10123355263157895,
+      "events_per_pixel": 0.6853070175438597,
+      "method": "recursive",
+      "family": "event-driven",
+      "seconds": 0.001444438999897102,
+      "ns_per_event": 28.888779997942038,
+      "events_per_second": 34615515.091715105,
+      "peak_bytes": 2841680
+    },
+    {
+      "recording_id": "ISS_2_td",
+      "recording_idx": 2,
+      "shape": [
+        240,
+        304
+      ],
+      "n_pixels": 72960,
+      "duration_s": 6.848512,
+      "keep_fraction": 0.25,
+      "n_events": 50000,
+      "pixel_occupancy": 0.10123355263157895,
+      "events_per_pixel": 0.6853070175438597,
+      "method": "edlr_zk",
+      "family": "event-driven",
+      "seconds": 0.014613983999879565,
+      "ns_per_event": 292.2796799975913,
+      "events_per_second": 3421380.5079033924,
+      "peak_bytes": 5157239
+    },
+    {
+      "recording_id": "ISS_2_td",
+      "recording_idx": 2,
+      "shape": [
+        240,
+        304
+      ],
+      "n_pixels": 72960,
+      "duration_s": 6.848512,
+      "keep_fraction": 0.1,
+      "n_events": 20000,
+      "pixel_occupancy": 0.061101973684210525,
+      "events_per_pixel": 0.2741228070175439,
+      "method": "edlr",
+      "family": "event-driven",
+      "seconds": 0.005752634000600665,
+      "ns_per_event": 287.63170003003324,
+      "events_per_second": 3476668.252823261,
+      "peak_bytes": 2730407
+    },
+    {
+      "recording_id": "ISS_2_td",
+      "recording_idx": 2,
+      "shape": [
+        240,
+        304
+      ],
+      "n_pixels": 72960,
+      "duration_s": 6.848512,
+      "keep_fraction": 0.1,
+      "n_events": 20000,
+      "pixel_occupancy": 0.061101973684210525,
+      "events_per_pixel": 0.2741228070175439,
+      "method": "plr",
+      "family": "frame-based",
+      "seconds": 0.6494047769992903,
+      "ns_per_event": 32470.238849964517,
+      "events_per_second": 30797.432831360056,
+      "peak_bytes": 233768704
+    },
+    {
+      "recording_id": "ISS_2_td",
+      "recording_idx": 2,
+      "shape": [
+        240,
+        304
+      ],
+      "n_pixels": 72960,
+      "duration_s": 6.848512,
+      "keep_fraction": 0.1,
+      "n_events": 20000,
+      "pixel_occupancy": 0.061101973684210525,
+      "events_per_pixel": 0.2741228070175439,
+      "method": "bilateral",
+      "family": "frame-based",
+      "seconds": 0.6270940659996995,
+      "ns_per_event": 31354.703299984973,
+      "events_per_second": 31893.141849646498,
+      "peak_bytes": 58932010
+    },
+    {
+      "recording_id": "ISS_2_td",
+      "recording_idx": 2,
+      "shape": [
+        240,
+        304
+      ],
+      "n_pixels": 72960,
+      "duration_s": 6.848512,
+      "keep_fraction": 0.1,
+      "n_events": 20000,
+      "pixel_occupancy": 0.061101973684210525,
+      "events_per_pixel": 0.2741228070175439,
+      "method": "bilateral_ed",
+      "family": "event-driven",
+      "seconds": 0.0060005289997207,
+      "ns_per_event": 300.026449986035,
+      "events_per_second": 3333039.4705085033,
+      "peak_bytes": 1245428
+    },
+    {
+      "recording_id": "ISS_2_td",
+      "recording_idx": 2,
+      "shape": [
+        240,
+        304
+      ],
+      "n_pixels": 72960,
+      "duration_s": 6.848512,
+      "keep_fraction": 0.1,
+      "n_events": 20000,
+      "pixel_occupancy": 0.061101973684210525,
+      "events_per_pixel": 0.2741228070175439,
+      "method": "ynoise",
+      "family": "event-driven",
+      "seconds": 0.0011242109994782368,
+      "ns_per_event": 56.21054997391184,
+      "events_per_second": 17790254.684647545,
+      "peak_bytes": 1225052
+    },
+    {
+      "recording_id": "ISS_2_td",
+      "recording_idx": 2,
+      "shape": [
+        240,
+        304
+      ],
+      "n_pixels": 72960,
+      "duration_s": 6.848512,
+      "keep_fraction": 0.1,
+      "n_events": 20000,
+      "pixel_occupancy": 0.061101973684210525,
+      "events_per_pixel": 0.2741228070175439,
+      "method": "temporal",
+      "family": "frame-based",
+      "seconds": 0.025521523999486817,
+      "ns_per_event": 1276.0761999743409,
+      "events_per_second": 783652.2615343095,
+      "peak_bytes": 1126280
+    },
+    {
+      "recording_id": "ISS_2_td",
+      "recording_idx": 2,
+      "shape": [
+        240,
+        304
+      ],
+      "n_pixels": 72960,
+      "duration_s": 6.848512,
+      "keep_fraction": 0.1,
+      "n_events": 20000,
+      "pixel_occupancy": 0.061101973684210525,
+      "events_per_pixel": 0.2741228070175439,
+      "method": "recursive",
+      "family": "event-driven",
+      "seconds": 0.0006459470005211188,
+      "ns_per_event": 32.29735002605594,
+      "events_per_second": 30962292.54701232,
+      "peak_bytes": 1881680
+    },
+    {
+      "recording_id": "ISS_2_td",
+      "recording_idx": 2,
+      "shape": [
+        240,
+        304
+      ],
+      "n_pixels": 72960,
+      "duration_s": 6.848512,
+      "keep_fraction": 0.1,
+      "n_events": 20000,
+      "pixel_occupancy": 0.061101973684210525,
+      "events_per_pixel": 0.2741228070175439,
+      "method": "edlr_zk",
+      "family": "event-driven",
+      "seconds": 0.007076106001477456,
+      "ns_per_event": 353.8053000738728,
+      "events_per_second": 2826413.2837784085,
+      "peak_bytes": 3432415
+    },
+    {
+      "recording_id": "ISS_2_td",
+      "recording_idx": 2,
+      "shape": [
+        240,
+        304
+      ],
+      "n_pixels": 72960,
+      "duration_s": 6.848512,
+      "keep_fraction": 0.05,
+      "n_events": 10000,
+      "pixel_occupancy": 0.040556469298245613,
+      "events_per_pixel": 0.13706140350877194,
+      "method": "edlr",
+      "family": "event-driven",
+      "seconds": 0.003427642001042841,
+      "ns_per_event": 342.7642001042841,
+      "events_per_second": 2917457.53989406,
+      "peak_bytes": 2607265
+    },
+    {
+      "recording_id": "ISS_2_td",
+      "recording_idx": 2,
+      "shape": [
+        240,
+        304
+      ],
+      "n_pixels": 72960,
+      "duration_s": 6.848512,
+      "keep_fraction": 0.05,
+      "n_events": 10000,
+      "pixel_occupancy": 0.040556469298245613,
+      "events_per_pixel": 0.13706140350877194,
+      "method": "plr",
+      "family": "frame-based",
+      "seconds": 0.6384975210003176,
+      "ns_per_event": 63849.752100031765,
+      "events_per_second": 15661.767933465517,
+      "peak_bytes": 233768004
+    },
+    {
+      "recording_id": "ISS_2_td",
+      "recording_idx": 2,
+      "shape": [
+        240,
+        304
+      ],
+      "n_pixels": 72960,
+      "duration_s": 6.848512,
+      "keep_fraction": 0.05,
+      "n_events": 10000,
+      "pixel_occupancy": 0.040556469298245613,
+      "events_per_pixel": 0.13706140350877194,
+      "method": "bilateral",
+      "family": "frame-based",
+      "seconds": 0.6723569629994017,
+      "ns_per_event": 67235.69629994017,
+      "events_per_second": 14873.051891051655,
+      "peak_bytes": 58651894
+    },
+    {
+      "recording_id": "ISS_2_td",
+      "recording_idx": 2,
+      "shape": [
+        240,
+        304
+      ],
+      "n_pixels": 72960,
+      "duration_s": 6.848512,
+      "keep_fraction": 0.05,
+      "n_events": 10000,
+      "pixel_occupancy": 0.040556469298245613,
+      "events_per_pixel": 0.13706140350877194,
+      "method": "bilateral_ed",
+      "family": "event-driven",
+      "seconds": 0.003085221998844645,
+      "ns_per_event": 308.5221998844645,
+      "events_per_second": 3241257.8426268203,
+      "peak_bytes": 915428
+    },
+    {
+      "recording_id": "ISS_2_td",
+      "recording_idx": 2,
+      "shape": [
+        240,
+        304
+      ],
+      "n_pixels": 72960,
+      "duration_s": 6.848512,
+      "keep_fraction": 0.05,
+      "n_events": 10000,
+      "pixel_occupancy": 0.040556469298245613,
+      "events_per_pixel": 0.13706140350877194,
+      "method": "ynoise",
+      "family": "event-driven",
+      "seconds": 0.0005684000007022405,
+      "ns_per_event": 56.84000007022405,
+      "events_per_second": 17593244.17249351,
+      "peak_bytes": 905052
+    },
+    {
+      "recording_id": "ISS_2_td",
+      "recording_idx": 2,
+      "shape": [
+        240,
+        304
+      ],
+      "n_pixels": 72960,
+      "duration_s": 6.848512,
+      "keep_fraction": 0.05,
+      "n_events": 10000,
+      "pixel_occupancy": 0.040556469298245613,
+      "events_per_pixel": 0.13706140350877194,
+      "method": "temporal",
+      "family": "frame-based",
+      "seconds": 0.02400154799943266,
+      "ns_per_event": 2400.154799943266,
+      "events_per_second": 416639.7934098407,
+      "peak_bytes": 1000564
+    },
+    {
+      "recording_id": "ISS_2_td",
+      "recording_idx": 2,
+      "shape": [
+        240,
+        304
+      ],
+      "n_pixels": 72960,
+      "duration_s": 6.848512,
+      "keep_fraction": 0.05,
+      "n_events": 10000,
+      "pixel_occupancy": 0.040556469298245613,
+      "events_per_pixel": 0.13706140350877194,
+      "method": "recursive",
+      "family": "event-driven",
+      "seconds": 0.00032392600041930564,
+      "ns_per_event": 32.392600041930564,
+      "events_per_second": 30871248.331580397,
+      "peak_bytes": 1561680
+    },
+    {
+      "recording_id": "ISS_2_td",
+      "recording_idx": 2,
+      "shape": [
+        240,
+        304
+      ],
+      "n_pixels": 72960,
+      "duration_s": 6.848512,
+      "keep_fraction": 0.05,
+      "n_events": 10000,
+      "pixel_occupancy": 0.040556469298245613,
+      "events_per_pixel": 0.13706140350877194,
+      "method": "edlr_zk",
+      "family": "event-driven",
+      "seconds": 0.004352298999947379,
+      "ns_per_event": 435.22989999473793,
+      "events_per_second": 2297636.2607718133,
+      "peak_bytes": 3272014
+    },
+    {
+      "recording_id": "ISS_2_td",
+      "recording_idx": 2,
+      "shape": [
+        240,
+        304
+      ],
+      "n_pixels": 72960,
+      "duration_s": 6.848512,
+      "keep_fraction": 0.02,
+      "n_events": 4000,
+      "pixel_occupancy": 0.02221765350877193,
+      "events_per_pixel": 0.05482456140350877,
+      "method": "edlr",
+      "family": "event-driven",
+      "seconds": 0.0019791960003203712,
+      "ns_per_event": 494.79900008009275,
+      "events_per_second": 2021022.677568327,
+      "peak_bytes": 2559041
+    },
+    {
+      "recording_id": "ISS_2_td",
+      "recording_idx": 2,
+      "shape": [
+        240,
+        304
+      ],
+      "n_pixels": 72960,
+      "duration_s": 6.848512,
+      "keep_fraction": 0.02,
+      "n_events": 4000,
+      "pixel_occupancy": 0.02221765350877193,
+      "events_per_pixel": 0.05482456140350877,
+      "method": "plr",
+      "family": "frame-based",
+      "seconds": 0.63585751500068,
+      "ns_per_event": 158964.37875017,
+      "events_per_second": 6290.717504527288,
+      "peak_bytes": 233768114
+    },
+    {
+      "recording_id": "ISS_2_td",
+      "recording_idx": 2,
+      "shape": [
+        240,
+        304
+      ],
+      "n_pixels": 72960,
+      "duration_s": 6.848512,
+      "keep_fraction": 0.02,
+      "n_events": 4000,
+      "pixel_occupancy": 0.02221765350877193,
+      "events_per_pixel": 0.05482456140350877,
+      "method": "bilateral",
+      "family": "frame-based",
+      "seconds": 0.6249167779988056,
+      "ns_per_event": 156229.1944997014,
+      "events_per_second": 6400.852306781312,
+      "peak_bytes": 58483894
+    },
+    {
+      "recording_id": "ISS_2_td",
+      "recording_idx": 2,
+      "shape": [
+        240,
+        304
+      ],
+      "n_pixels": 72960,
+      "duration_s": 6.848512,
+      "keep_fraction": 0.02,
+      "n_events": 4000,
+      "pixel_occupancy": 0.02221765350877193,
+      "events_per_pixel": 0.05482456140350877,
+      "method": "bilateral_ed",
+      "family": "event-driven",
+      "seconds": 0.0016139960007421905,
+      "ns_per_event": 403.49900018554763,
+      "events_per_second": 2478320.886892293,
+      "peak_bytes": 717428
+    },
+    {
+      "recording_id": "ISS_2_td",
+      "recording_idx": 2,
+      "shape": [
+        240,
+        304
+      ],
+      "n_pixels": 72960,
+      "duration_s": 6.848512,
+      "keep_fraction": 0.02,
+      "n_events": 4000,
+      "pixel_occupancy": 0.02221765350877193,
+      "events_per_pixel": 0.05482456140350877,
+      "method": "ynoise",
+      "family": "event-driven",
+      "seconds": 0.0003668280005513225,
+      "ns_per_event": 91.70700013783062,
+      "events_per_second": 10904293.00377348,
+      "peak_bytes": 713052
+    },
+    {
+      "recording_id": "ISS_2_td",
+      "recording_idx": 2,
+      "shape": [
+        240,
+        304
+      ],
+      "n_pixels": 72960,
+      "duration_s": 6.848512,
+      "keep_fraction": 0.02,
+      "n_events": 4000,
+      "pixel_occupancy": 0.02221765350877193,
+      "events_per_pixel": 0.05482456140350877,
+      "method": "temporal",
+      "family": "frame-based",
+      "seconds": 0.028910574999827077,
+      "ns_per_event": 7227.643749956769,
+      "events_per_second": 138357.67707919766,
+      "peak_bytes": 927380
+    },
+    {
+      "recording_id": "ISS_2_td",
+      "recording_idx": 2,
+      "shape": [
+        240,
+        304
+      ],
+      "n_pixels": 72960,
+      "duration_s": 6.848512,
+      "keep_fraction": 0.02,
+      "n_events": 4000,
+      "pixel_occupancy": 0.02221765350877193,
+      "events_per_pixel": 0.05482456140350877,
+      "method": "recursive",
+      "family": "event-driven",
+      "seconds": 0.00017608100097277202,
+      "ns_per_event": 44.020250243193004,
+      "events_per_second": 22716817.702657957,
+      "peak_bytes": 1369680
+    },
+    {
+      "recording_id": "ISS_2_td",
+      "recording_idx": 2,
+      "shape": [
+        240,
+        304
+      ],
+      "n_pixels": 72960,
+      "duration_s": 6.848512,
+      "keep_fraction": 0.02,
+      "n_events": 4000,
+      "pixel_occupancy": 0.02221765350877193,
+      "events_per_pixel": 0.05482456140350877,
+      "method": "edlr_zk",
+      "family": "event-driven",
+      "seconds": 0.0033667679999780376,
+      "ns_per_event": 841.6919999945094,
+      "events_per_second": 1188083.0517654002,
+      "peak_bytes": 3176132
+    },
+    {
+      "recording_id": "ISS_2_td",
+      "recording_idx": 2,
+      "shape": [
+        240,
+        304
+      ],
+      "n_pixels": 72960,
+      "duration_s": 6.848512,
+      "keep_fraction": 0.01,
+      "n_events": 2000,
+      "pixel_occupancy": 0.013788377192982456,
+      "events_per_pixel": 0.027412280701754384,
+      "method": "edlr",
+      "family": "event-driven",
+      "seconds": 0.001866745000370429,
+      "ns_per_event": 933.3725001852144,
+      "events_per_second": 1071383.6113679847,
+      "peak_bytes": 2543041
+    },
+    {
+      "recording_id": "ISS_2_td",
+      "recording_idx": 2,
+      "shape": [
+        240,
+        304
+      ],
+      "n_pixels": 72960,
+      "duration_s": 6.848512,
+      "keep_fraction": 0.01,
+      "n_events": 2000,
+      "pixel_occupancy": 0.013788377192982456,
+      "events_per_pixel": 0.027412280701754384,
+      "method": "plr",
+      "family": "frame-based",
+      "seconds": 0.6386868669997057,
+      "ns_per_event": 319343.43349985284,
+      "events_per_second": 3131.424964779997,
+      "peak_bytes": 233768153
+    },
+    {
+      "recording_id": "ISS_2_td",
+      "recording_idx": 2,
+      "shape": [
+        240,
+        304
+      ],
+      "n_pixels": 72960,
+      "duration_s": 6.848512,
+      "keep_fraction": 0.01,
+      "n_events": 2000,
+      "pixel_occupancy": 0.013788377192982456,
+      "events_per_pixel": 0.027412280701754384,
+      "method": "bilateral",
+      "family": "frame-based",
+      "seconds": 0.6173943840003631,
+      "ns_per_event": 308697.19200018153,
+      "events_per_second": 3239.420460939638,
+      "peak_bytes": 58427894
+    },
+    {
+      "recording_id": "ISS_2_td",
+      "recording_idx": 2,
+      "shape": [
+        240,
+        304
+      ],
+      "n_pixels": 72960,
+      "duration_s": 6.848512,
+      "keep_fraction": 0.01,
+      "n_events": 2000,
+      "pixel_occupancy": 0.013788377192982456,
+      "events_per_pixel": 0.027412280701754384,
+      "method": "bilateral_ed",
+      "family": "event-driven",
+      "seconds": 0.0006774850007786881,
+      "ns_per_event": 338.74250038934406,
+      "events_per_second": 2952094.8769363733,
+      "peak_bytes": 651428
+    },
+    {
+      "recording_id": "ISS_2_td",
+      "recording_idx": 2,
+      "shape": [
+        240,
+        304
+      ],
+      "n_pixels": 72960,
+      "duration_s": 6.848512,
+      "keep_fraction": 0.01,
+      "n_events": 2000,
+      "pixel_occupancy": 0.013788377192982456,
+      "events_per_pixel": 0.027412280701754384,
+      "method": "ynoise",
+      "family": "event-driven",
+      "seconds": 0.0001490459999331506,
+      "ns_per_event": 74.5229999665753,
+      "events_per_second": 13418676.119433131,
+      "peak_bytes": 649052
+    },
+    {
+      "recording_id": "ISS_2_td",
+      "recording_idx": 2,
+      "shape": [
+        240,
+        304
+      ],
+      "n_pixels": 72960,
+      "duration_s": 6.848512,
+      "keep_fraction": 0.01,
+      "n_events": 2000,
+      "pixel_occupancy": 0.013788377192982456,
+      "events_per_pixel": 0.027412280701754384,
+      "method": "temporal",
+      "family": "frame-based",
+      "seconds": 0.024669288000950473,
+      "ns_per_event": 12334.644000475237,
+      "events_per_second": 81072.46548513856,
+      "peak_bytes": 903020
+    },
+    {
+      "recording_id": "ISS_2_td",
+      "recording_idx": 2,
+      "shape": [
+        240,
+        304
+      ],
+      "n_pixels": 72960,
+      "duration_s": 6.848512,
+      "keep_fraction": 0.01,
+      "n_events": 2000,
+      "pixel_occupancy": 0.013788377192982456,
+      "events_per_pixel": 0.027412280701754384,
+      "method": "recursive",
+      "family": "event-driven",
+      "seconds": 8.535300003131852e-05,
+      "ns_per_event": 42.67650001565926,
+      "events_per_second": 23432099.624689717,
+      "peak_bytes": 1305680
+    },
+    {
+      "recording_id": "ISS_2_td",
+      "recording_idx": 2,
+      "shape": [
+        240,
+        304
+      ],
+      "n_pixels": 72960,
+      "duration_s": 6.848512,
+      "keep_fraction": 0.01,
+      "n_events": 2000,
+      "pixel_occupancy": 0.013788377192982456,
+      "events_per_pixel": 0.027412280701754384,
+      "method": "edlr_zk",
+      "family": "event-driven",
+      "seconds": 0.0025927259994205087,
+      "ns_per_event": 1296.3629997102544,
+      "events_per_second": 771388.8781332902,
+      "peak_bytes": 3144331
+    }
+  ]
+}

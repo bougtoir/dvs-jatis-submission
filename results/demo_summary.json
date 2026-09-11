@@ -1,0 +1,9 @@
+{
+  "source": "noise_inverse_demo.py on EBSSA labelled recording #0 (DAVIS240C, 180x240)",
+  "events_in": "1,800,674",
+  "events_residual": "175,261",
+  "removal_pct": "90.3",
+  "threshold": "0.5",
+  "signal_pixels": "2,294",
+  "total_pixels": "43,200"
+}
